@@ -32,6 +32,7 @@ html, body {
 .loading .bang {
     width: .67rem;
     position: absolute;
+    top: .23rem;
 }
 .container-1 {
     background: #e32a77 url('../img/bg1.jpg') no-repeat  center center;

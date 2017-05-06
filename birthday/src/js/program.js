@@ -1,4 +1,5 @@
 (function($) {
+    var canClick = false;
     $(document).ready(function () {
         setTimeout(function() {
             $('.loading').hide();
@@ -19,10 +20,14 @@
             }, 2700);
             setTimeout(function() {
                 $('.bal2').addClass('float').removeClass('animate');
+                canClick = true;
             }, 3200);
         }, 1600);
 
         $('.container-1').on('click', function() {
+            if (!canClick) {
+                return;
+            }
             $('.container-1').hide();
             $('.container-2').show();
             $('.container-2 .title, .container-2 .candle').addClass('animate');

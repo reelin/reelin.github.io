@@ -1,5 +1,12 @@
 (function($) {
     var canClick = false;
+    var isFirst = true;
+    // 禁止微信浏览器下拉
+    $('body').on('touchmove', function(evt) {
+      if(!evt._isScroller) {
+        evt.preventDefault();
+      }
+    });
     $(document).ready(function () {
         setTimeout(function() {
             $('.loading').hide();
@@ -33,20 +40,38 @@
             $('.container-2 .title, .container-2 .candle').addClass('animate');
         });
         $('.container-2').on('click', function() {
-            $('.container-2 .lihua1, .container-2 .lihua2, .container-2 .yanhua2, .container-2 .yanhua1').addClass('animate');
-            setTimeout(function() {
-                $('.container-2').hide();
-                $('.container-3').show();
-                $('.container-3 .people').addClass('animate');
-                setTimeout(function() {
-                    $('.container-3 .people').addClass('float').removeClass('animate');
-
-                }, 600);
-            }, 1000);
+                if (isFirst && !$('.present .jz').hasClass('animate')) {
+                    $('.present .jz').addClass('animate');
+                }
         });
+        $('.container-2').on('click', '.present', function() {
+
+                if (isFirst && $('.present .jz').hasClass('animate')) {
+                    isFirst = false;
+                    $('.present .tip').addClass('animate');
+                    setTimeout(function() {
+                        $('.container-2 .lihua1, .container-2 .lihua2, .container-2 .yanhua2, .container-2 .yanhua1').addClass('animate');
+                        setTimeout(function() {
+                            $('.container-2').hide();
+                            $('.container-3').show();
+                            $('.container-3 .candle').addClass('animate');
+
+                        }, 1000);
+                    }, 1000);
+
+                }
+        });
+        $('.container-3').on('click', function() {
+            $('.container-3 .people').addClass('animate');
+            setTimeout(function() {
+                $('.container-3 .people').addClass('float').removeClass('animate');
+
+            }, 600);
+        });
+
 
     });
 
 
 
-})(Zepto);
+})(jQuery);

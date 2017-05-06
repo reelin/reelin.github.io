@@ -653,6 +653,7 @@ html, body {
     -webkit-animation: scale 1s linear;
     -moz-animation: scale 1s linear;
     -o-animation:scale 1s linear;
+    animation:scale 1s linear;
 }
 .container-2 .lihua2 {
     bottom: 1.3rem;
@@ -668,6 +669,39 @@ html, body {
     -moz-animation: scale 1s linear;
     -o-animation:scale 1s linear;
 }
+.present {
+    top: 6.55rem;
+    position: absolute;
+    z-index: 99;
+    left: 1.5rem;
+    width: 4.42rem;
+    height: 2.44rem;
+}
+.present .jz {
+    width: 4.42rem;
+    opacity: 0;
+}
+.present .jz.animate {
+    opacity: 1;
+    animation: small .3s linear;
+    -webkit-animation: small .3s linear;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+.present .tip {
+    opacity: 0;
+    width: 5.57rem;
+    left: -.5rem;
+}
+.present .tip.animate {
+    animation: show .6s linear;
+    -webkit-animation: show .6s linear;
+    -moz-animation: show .6s linear;
+    -o-animation: show .6s linear;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+
 .container-3 {
     background: url('../img/bg3.jpg') no-repeat center center;
     background-size: cover;
@@ -683,6 +717,25 @@ html, body {
     width: .72rem;
     height: 1.76rem;
     z-index: 9;
+    transform: translateY(-7rem);
+    -webkit-transform: translateY(-7rem);
+}
+
+.container-3 .candle.animate {
+    animation: titlemove .6s;
+    -webkit-animation: titlemove .6s;
+    -moz-animation: titlemove .6s;
+    -o-animation: titlemove .6s;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+.container-3 .candle.animate .light {
+    animation: scale 1s linear infinite;
+    -webkit-animation: scale 1s linear infinite;
+    -moz-animation: scale 1s linear infinite;
+    -o-animation:scale 1s linear infinite;
+    animation-delay: .8s;
+    -webkit-animation-delay: .8s;
 }
 .container-3 .candle .light {
     animation: scale 1s linear infinite;
@@ -696,6 +749,7 @@ html, body {
 .container-3 .people {
     transform-origin: bottom;
     -webkit-transform-origin: bottom;
+    opacity: 0;
 }
 .container-3 .p1.animate {
     transform-origin: bottom;
@@ -787,5 +841,23 @@ html, body {
        transform: perspective(600px) rotateX(0deg);
        -webkit-transform: perspective(600px) rotateX(0deg);
        opacity: 1;
+    }
+}
+@keyframes small {
+    0% {
+        transform: scale(1.5);
+    }
+
+    100% {
+       transform: scale(1);
+    }
+}
+@-webkit-keyframes small {
+    0% {
+        transform: scale(1.5);
+    }
+
+    100% {
+       transform: scale(1);
     }
 }

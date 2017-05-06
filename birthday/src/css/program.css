@@ -668,3 +668,123 @@ html, body {
     -moz-animation: scale 1s linear;
     -o-animation:scale 1s linear;
 }
+.container-3 {
+    background: url('../img/bg3.jpg') no-repeat center center;
+    background-size: 100%;
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+.container-3 .candle {
+    position: absolute;
+    top: 8rem;
+    left: 3.2rem;
+    width: .72rem;
+    height: 1.76rem;
+    z-index: 9;
+}
+.container-3 .candle .light {
+    animation: scale 1s linear infinite;
+    -webkit-animation: scale 1s linear infinite;
+    -moz-animation: scale 1s linear infinite;
+    -o-animation:scale 1s linear infinite;
+}
+.container-3 img {
+    position: absolute;
+}
+.container-3 .people {
+    transform-origin: bottom;
+    -webkit-transform-origin: bottom;
+}
+.container-3 .p1.animate {
+    transform-origin: bottom;
+    -webkit-transform-origin: bottom;
+    opacity: 0;
+    animation: overturn .3s linear;
+    -webkit-animation: overturn .3s linear;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-delay: .1s;
+    -webkit-animation-delay: .1s;
+}
+.container-3 .p2.animate {
+    transform-origin: bottom;
+    -webkit-transform-origin: bottom;
+    opacity: 0;
+    animation: overturn .3s linear,mus;
+    -webkit-animation: overturn .3s linear;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+.container-3 .p3.animate {
+    transform-origin: bottom;
+    -webkit-transform-origin: bottom;
+    opacity: 0;
+    animation: overturn .3s linear,mus;
+    -webkit-animation: overturn .3s linear;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-delay: .2s;
+    -webkit-animation-delay: .2s;
+}
+.container-3 .p1.float {
+    opacity: 1;
+    animation: music-move 2s infinite alternate ease-in-out;
+    -webkit-animation: music-move 2s infinite alternate ease-in-out;
+    animation-delay: .2s;
+    -webkit-animation-delay: .2s;
+}
+.container-3 .p2.float {
+    opacity: 1;
+    animation: music-move 2s infinite alternate ease-in-out;
+    -webkit-animation: music-move 2s infinite alternate ease-in-out;
+    animation-delay: .1s;
+    -webkit-animation-delay: .1s;
+}
+.container-3 .p3.float {
+    opacity: 1;
+    animation: music-move 2s infinite alternate ease-in-out;
+    -webkit-animation: music-move 2s infinite alternate ease-in-out;
+    animas;
+}
+.container-3 .p1 {
+    width: 1.55rem;
+    left: .2rem;
+    bottom: -.05rem;
+}
+.container-3 .p2 {
+    width: 2.9rem;
+    right: 0;
+    bottom: -.25rem;
+}
+.container-3 .p3 {
+    width: 1.62rem;
+    left: 1.6rem;
+    bottom: -.5rem;
+}
+@keyframes overturn {
+    0% {
+        transform: perspective(600px) rotateX(80deg);
+        -webkit-transform: perspective(600px) rotateX(80deg);
+        opacity: 1;
+    }
+
+    100% {
+       transform: perspective(600px) rotateX(0deg);
+       -webkit-transform: perspective(600px) rotateX(0deg);
+       opacity: 1;
+    }
+}
+@-webkit-keyframes overturn {
+    0% {
+        transform: perspective(600px) rotateX(80deg);
+        -webkit-transform: perspective(600px) rotateX(80deg);
+        opacity: 1;
+    }
+
+    100% {
+       transform: perspective(600px) rotateX(0deg);
+       -webkit-transform: perspective(600px) rotateX(0deg);
+       opacity: 1;
+    }
+}

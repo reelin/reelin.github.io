@@ -27,9 +27,17 @@
             $('.container-2').show();
             $('.container-2 .title, .container-2 .candle').addClass('animate');
         });
-        $('.container-2 .candle').on('click', function() {
-
+        $('.container-2').on('click', function() {
             $('.container-2 .lihua1, .container-2 .lihua2, .container-2 .yanhua2, .container-2 .yanhua1').addClass('animate');
+            setTimeout(function() {
+                $('.container-2').hide();
+                $('.container-3').show();
+                $('.container-3 .people').addClass('animate');
+                setTimeout(function() {
+                    $('.container-3 .people').addClass('float').removeClass('animate');
+
+                }, 600);
+            }, 1000);
         });
 
     });

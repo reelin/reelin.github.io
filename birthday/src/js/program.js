@@ -31,7 +31,7 @@
             }, 3200);
         }, 1600);
 
-        $('.container-1').on('click', function() {
+        $('.container-1').on('touch', function() {
             if (!canClick) {
                 return;
             }
@@ -39,12 +39,12 @@
             $('.container-2').show();
             $('.container-2 .title, .container-2 .candle').addClass('animate');
         });
-        $('.container-2').on('click', function() {
+        $('.container-2').on('touch', function() {
                 if (isFirst && !$('.present .jz').hasClass('animate')) {
                     $('.present .jz').addClass('animate');
                 }
         });
-        $('.container-2').on('click', '.present', function() {
+        $('.container-2').on('touch', '.present', function() {
 
                 if (isFirst && $('.present .jz').hasClass('animate')) {
                     isFirst = false;
@@ -61,7 +61,7 @@
 
                 }
         });
-        $('.container-3').on('click', function() {
+        $('.container-3').on('touch', function() {
             $('.container-3 .people').addClass('animate');
             setTimeout(function() {
                 $('.container-3 .people').addClass('float').removeClass('animate');
@@ -74,4 +74,4 @@
 
 
 
-})(jQuery);
+})(Zepto);

@@ -155,11 +155,11 @@ html, body {
     width: .96rem;
     left: 4rem;
     bottom: 2rem;
-    display: none;
-    z-index: 999;
+    opacity: 0;
+    z-index: 99999;
 }
 .car-wrapper .c1.animate {
-    display: block;
+
     animation: show .4s linear infinite;
     -webkit-animation: show .4s linear infinite;
     animation-delay: .6s;
@@ -169,11 +169,10 @@ html, body {
     width: .56rem;
     left: 4.4rem;
     bottom: 1.8rem;
-    display: none;
-    z-index: 999;
+    opacity: 0;
+    z-index: 99999;
 }
 .car-wrapper .c2.animate {
-    display: block;
     animation: show .4s linear infinite;
     -webkit-animation: show .4s linear infinite;
     animation-delay: .6s;

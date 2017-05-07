@@ -96,7 +96,10 @@
         }, 2600);
         setTimeout(function() {
             $('.container-3 .p1').addClass('float').removeClass('animate');
-            $('.container-3 .tips').addClass('animate');
+            setTimeout(function() {
+                $('.container-3 .tips').addClass('animate');
+            }, 1000);
+
         }, 4900);
     });
     // $('.container-2').on('touchstart', '.present', function() {

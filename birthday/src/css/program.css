@@ -1054,14 +1054,10 @@ top: 2rem;
     display: none;
 }
 .container-3 .tips.animate {
-    animation: show .6s;
-    -webkit-animation: show .6s;
-    -moz-animation: show .6s;
-    -o-animation: show .6s;
+    animation: tipscale 1s linear;
+     -webkit-animation: tipscale 1s linear;
 
     display: block;
-    animation-fill-mode: forwards;
-    -webkit-animation-fill-mode: forwards;
 }
 .container-3 .p1.float {
     opacity: 1;
@@ -1149,4 +1145,20 @@ top: 2rem;
 @-webkit-keyframes clickshow {
   0% { display: none;}
   100% { display: block; }
+}
+@keyframes tipscale {
+    0% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@-webkit-keyframes tipscale {
+    0% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1);
+    }
 }

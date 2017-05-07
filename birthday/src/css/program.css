@@ -21,6 +21,18 @@ html, body {
     top: 40%;
     left: 3.5rem;
 }
+.loading .btn {
+    display: none;
+    width: 4.57rem;
+    position: absolute;
+    top: 55%;
+    left: 1.5rem;
+    animation: show 1.2s linear infinite;
+    -webkit-animation: show 1.2s linear infinite;
+}
+.loading .btn img {
+    width: 4.57rem;
+}
 .loading .dot {
     width: .59rem;
     position: absolute;
@@ -184,29 +196,61 @@ html, body {
     position: absolute;
     top: 4rem;
     left: 3.2rem;
-    transform: translateY(-7rem);
-    -webkit-transform: translateY(-7rem);
     width: .72rem;
     height: 1.76rem;
     z-index: 999;
 }
 .container-1 .candle.animate {
-    animation: titlemove .6s;
+    /*animation: titlemove .6s;
     -webkit-animation: titlemove .6s;
     -moz-animation: titlemove .6s;
     -o-animation: titlemove .6s;
     animation-delay: 1.8s;
     -webkit-animation-delay: 1.8s;
     animation-fill-mode: forwards;
-    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;*/
+}
+.container-1 .candle .b {
+    bottom: 0;
+    width: .08rem;
+    left: .4rem;
+}
+.container-1 .candle .can {
+    top: 0;
+    z-index: 1;
+    display: none;
+}
+.container-1 .candle .light {
+    display: none;
+}
+.container-1 .candle.animate .can {
+    display: block;
 }
 .container-1 .candle.animate .light {
+    display: block;
     animation: scale 1s linear infinite;
     -webkit-animation: scale 1s linear infinite;
     -moz-animation: scale 1s linear infinite;
     -o-animation:scale 1s linear infinite;
     animation-delay: 1.8s;
     -webkit-animation-delay: 1.8s;
+    z-index: 1;
+}
+.container-1 .candle .c1 {
+    width: .96rem;
+    left: .8rem;
+    top: .5rem;
+    animation: show .4s linear infinite;
+    -webkit-animation: show .4s linear infinite;
+}
+.container-1 .candle .c2 {
+    width: .56rem;
+    left: 1.1rem;
+    top: .6rem;
+    animation: show .4s linear infinite;
+    -webkit-animation: show .4s linear infinite;
+    animation-delay: .3s;
+    -webkit-animation-delay: .3s;
 }
 .candle .can {
     width: .72rem;
@@ -581,9 +625,9 @@ html, body {
     top: 0;
 }
 .container-2 .font-p {
-    width: 6rem;
+    width: 3.13rem;
     top: 6rem;
-    left: 0.2rem;
+    left: 2.8rem;
     opacity: 0;
     animation: show .6s linear;
     -webkit-animation: show .6s linear;
@@ -593,6 +637,14 @@ html, body {
     -webkit-animation-delay: .8s;
     animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
+}
+.container-2 .gift-p {
+    width: 4.14rem;
+    width: 4.14rem;
+    bottom: 1rem;
+    left: 1.4rem;
+    z-index: 999;
+    display: none;
 }
 
 .container-2 .candle {
@@ -669,6 +721,121 @@ html, body {
     -moz-animation: scale 1s linear;
     -o-animation:scale 1s linear;
 }
+.modal {
+    background: url('../img/bg00.png') no-repeat center center;
+    background-size: cover;
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+.modal img {
+    position: absolute;
+    display: none;
+}
+.modal.animate {
+    animation: show .6s;
+    -webkit-animation: show .6s;
+    -moz-animation: show .6s;
+    -o-animation: show .6s;
+
+    display: block;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+.modal.animate .btn {
+    width: 3.24rem;
+    left: 2.2rem;
+    top: 7rem;
+    animation: show .6s;
+    -webkit-animation: show .6s;
+    -moz-animation: show .6s;
+    -o-animation: show .6s;
+
+    display: block;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-delay: 1.2s;
+    -webkit-animation-delay: 1.2s;
+}
+.modal.animate .title {
+    width: 7.5rem;
+    top: 0;
+    left: 0;
+    animation: show .6s;
+    -webkit-animation: show .6s;
+    -moz-animation: show .6s;
+    -o-animation: show .6s;
+
+    display: block;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-delay: 1.2s;
+    -webkit-animation-delay: 1.2s;
+}
+.modal .title-f {
+    width: 7.5rem;
+    top: 3.8rem;
+    left: 0;
+    display: none;
+}
+.modal .title-f.animate {
+    animation: show .6s;
+    -webkit-animation: show .6s;
+    -moz-animation: show .6s;
+    -o-animation: show .6s;
+
+    display: block;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+
+}
+.modal.animate .fw {
+    width: 7.5rem;
+    top: 0;
+    left: 0;
+    animation: show .6s;
+    -webkit-animation: show .6s;
+    -moz-animation: show .6s;
+    -o-animation: show .6s;
+
+    display: block;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-delay: .6s;
+    -webkit-animation-delay: .6s;
+}
+.modal .candle {
+    position: absolute;
+    left: 3.5rem;
+    bottom: 1.5rem;
+    width: .72rem;
+    height: 1.76rem;
+    z-index: 9;
+}
+.modal .candle.animate {
+    animation: show .6s;
+    -webkit-animation: show .6s;
+    -moz-animation: show .6s;
+    -o-animation: show .6s;
+
+    display: block;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-delay: .6s;
+    -webkit-animation-delay: .6s;
+}
+.modal .candle.animate img {
+    display: block;
+}
+.modal .candle.animate .light {
+    display: block;
+    animation: scale 1s linear infinite;
+    -webkit-animation: scale 1s linear infinite;
+    -moz-animation: scale 1s linear infinite;
+    -o-animation:scale 1s linear infinite;
+    animation-delay: .8s;
+    -webkit-animation-delay: .8s;
+}
 .present {
     top: 6.55rem;
     position: absolute;
@@ -703,7 +870,7 @@ html, body {
 }
 
 .container-3 {
-    background: url('../img/bg3.jpg') no-repeat center center;
+    background: url('../img/bg3.png') no-repeat center center;
     background-size: cover;
     display: none;
     width: 100%;
@@ -860,4 +1027,12 @@ html, body {
     100% {
        transform: scale(1);
     }
+}
+@keyframes clickshow {
+  0% { display: none;}
+  100% { display: block; }
+}
+@-webkit-keyframes clickshow {
+  0% { display: none;}
+  100% { display: block; }
 }

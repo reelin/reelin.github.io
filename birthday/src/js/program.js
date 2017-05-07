@@ -7,69 +7,98 @@
         evt.preventDefault();
       }
     });
-    $(document).ready(function () {
+    var myAudio = $('audio')[0];
+    function playPause(){
+        if(myAudio.paused){
+            myAudio.play();
+        }else{
+            myAudio.pause();
+        }
+    }
+    var timer = setInterval(function() {
+        if (myAudio.readyState) {
+            $('.loading .btn').show();
+            clearTimeout(timer);
+        }
+    }, 100);
+
+    $('.loading .btn').on('touchstart', function() {
+        $('audio')[0].play();
+        $('.loading').hide();
+        $('.container-1').addClass('animate');
+    });
+    $('.container-1 .candle').on('touchstart', function() {
+
+        $('.car, .car-rib, .container-1 .title, .bal, .container-1 .candle').addClass('animate');
+        $('.car, .car-rib, .container-1 .title, .bal, .container-1 .candle').addClass('animate');
         setTimeout(function() {
-            $('.loading').hide();
-
-            $('.container-1').addClass('animate');
-        }, 1000);
+            $('.car').addClass('float').removeClass('animate');
+        }, 1100);
         setTimeout(function() {
-            $('.car, .car-rib, .container-1 .title, .bal, .container-1 .candle').addClass('animate');
-            setTimeout(function() {
-                $('.car').addClass('float').removeClass('animate');
-            }, 1100);
-            setTimeout(function() {
-                $('.container-1 .title').addClass('float').removeClass('animate');
-                // $('.car-rib').addClass('float').removeClass('animate');
-            }, 2100);
-            setTimeout(function() {
-                $('.bal1').addClass('float').removeClass('animate');
-            }, 2700);
-            setTimeout(function() {
-                $('.bal2').addClass('float').removeClass('animate');
-                canClick = true;
-            }, 3200);
-        }, 1600);
-
-        $('.container-1').on('touchstart', function() {
-            if (!canClick) {
-                return;
-            }
-            $('.container-1').hide();
-            $('.container-2').show();
-            $('.container-2 .title, .container-2 .candle').addClass('animate');
-        });
-        $('.container-2').on('touchstart', function() {
-                if (isFirst && !$('.present .jz').hasClass('animate')) {
-                    $('.present .jz').addClass('animate');
-                }
-        });
-        $('.container-2').on('touchstart', '.present', function() {
-
-                if (isFirst && $('.present .jz').hasClass('animate')) {
+            $('.container-1 .title').addClass('float').removeClass('animate');
+            // $('.car-rib').addClass('float').removeClass('animate');
+        }, 2100);
+        setTimeout(function() {
+            $('.bal1').addClass('float').removeClass('animate');
+        }, 2700);
+        setTimeout(function() {
+            $('.bal2').addClass('float').removeClass('animate');
+            canClick = true;
+        }, 3200);
+    });
+    $('.container-1').on('touchstart', function() {
+        if (!canClick) {
+            return;
+        }
+        $('.container-1').hide();
+        $('.container-2').show();
+        $('.container-2 .title, .container-2 .candle').addClass('animate');
+        setTimeout(function() {
+            $(".container-2 .gift-p").show();
+        }, 3000);
+    });
+    $('.container-2').on('touchstart', function() {
+        if (isFirst && !$('.modal').hasClass('animate')) {
+            $('.container-2 .lihua1, .container-2 .lihua2, .container-2 .yanhua2, .container-2 .yanhua1').addClass('animate');
+                setTimeout(function() {
+                    $('.container-2').hide();
+                    $('.modal').addClass('animate');
                     isFirst = false;
-                    $('.present .tip').addClass('animate');
-                    setTimeout(function() {
-                        $('.container-2 .lihua1, .container-2 .lihua2, .container-2 .yanhua2, .container-2 .yanhua1').addClass('animate');
-                        setTimeout(function() {
-                            $('.container-2').hide();
-                            $('.container-3').show();
-                            $('.container-3 .candle').addClass('animate');
+                }, 1000);
 
-                        }, 1000);
-                    }, 1000);
+        }
+    });
+    $('.modal').on('touchstart', '.btn', function() {
+        $('.modal .title-f, .modal .candle').addClass('animate');
+    });
+    $('.modal').on('touchstart', '.candle', function() {
+        $('.modal').hide();
+        $('.container-3').show();
+        // $('.container-3 .candle').addClass('animate');
+    });
+    // $('.container-2').on('touchstart', '.present', function() {
+    //
+    //         if (isFirst && $('.present .jz').hasClass('animate')) {
+    //             isFirst = false;
+    //             $('.present .tip').addClass('animate');
+    //             setTimeout(function() {
+    //                 $('.container-2 .lihua1, .container-2 .lihua2, .container-2 .yanhua2, .container-2 .yanhua1').addClass('animate');
+    //                 setTimeout(function() {
+    //                     $('.container-2').hide();
+    //                     $('.container-3').show();
+    //                     $('.container-3 .candle').addClass('animate');
+    //
+    //                 }, 1000);
+    //             }, 1000);
+    //
+    //         }
+    // });
+    $('.container-3').on('touchstart', function() {
+        $('.container-3 .people').addClass('animate');
+        setTimeout(function() {
+            $('.container-3 .people').addClass('float').removeClass('animate');
 
-                }
-        });
-        $('.container-3').on('touchstart', function() {
-            $('.container-3 .people').addClass('animate');
-            setTimeout(function() {
-                $('.container-3 .people').addClass('float').removeClass('animate');
-
-            }, 600);
-        });
-
-
+        }, 600);
     });
 
 

@@ -151,6 +151,32 @@ html, body {
     -moz-transform: translateX(7rem);
     -o-transform: translateX(7rem);
 }
+.car-wrapper .c1 {
+    width: .96rem;
+    left: 4rem;
+    bottom: 2rem;
+    display: none;
+}
+.car-wrapper .c1.animate {
+    display: block;
+    animation: show .4s linear infinite;
+    -webkit-animation: show .4s linear infinite;
+    animation-delay: .6s;
+    -webkit-animation-delay: .6s;
+}
+.car-wrapper .c2 {
+    width: .56rem;
+    left: 4.4rem;
+    bottom: 1.8rem;
+    display: none;
+}
+.car-wrapper .c2.animate {
+    display: block;
+    animation: show .4s linear infinite;
+    -webkit-animation: show .4s linear infinite;
+    animation-delay: .6s;
+    -webkit-animation-delay: .6s;
+}
 .car.animate {
     animation: carmove .6s;
     -webkit-animation: carmove .6s;
@@ -172,6 +198,7 @@ html, body {
     -webkit-animation: music-move 2s infinite alternate ease-in-out;
     transform-origin: bottom;
     -webkit-transform-origin: bottom;
+    z-index: 9999;
 }
 .car-rib {
     right: 0;
@@ -236,14 +263,14 @@ html, body {
     -webkit-animation-delay: 1.8s;
     z-index: 1;
 }
-.container-1 .candle .c1 {
+.container-1 .candle .c1, .modal .candle .c1, .container-2 .candle .c1 {
     width: .96rem;
     left: .8rem;
     top: .5rem;
     animation: show .4s linear infinite;
     -webkit-animation: show .4s linear infinite;
 }
-.container-1 .candle .c2 {
+.container-1 .candle .c2, .modal .candle .c2, .container-2 .candle .c2 {
     width: .56rem;
     left: 1.1rem;
     top: .6rem;
@@ -639,10 +666,9 @@ html, body {
     -webkit-animation-fill-mode: forwards;
 }
 .container-2 .gift-p {
-    width: 4.14rem;
-    width: 4.14rem;
+    width: 5rem;
     bottom: 1rem;
-    left: 1.4rem;
+    left: 1.1rem;
     z-index: 999;
     display: none;
 }
@@ -994,6 +1020,8 @@ top: 2rem;
     -webkit-animation: overturn .3s linear;
     animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
+    animation-delay: 4s;
+    -webkit-animation-delay: 4s;
 
 }
 .container-3 .p2.animate {
@@ -1004,8 +1032,7 @@ top: 2rem;
     -webkit-animation: overturn .3s linear;
     animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
-    animation-delay: 4s;
-    -webkit-animation-delay: 4s;
+
 }
 .container-3 .p3.animate {
     transform-origin: bottom;
@@ -1017,6 +1044,23 @@ top: 2rem;
     -webkit-animation-fill-mode: forwards;
     animation-delay: 2s;
     -webkit-animation-delay: 2s;
+
+}
+.container-3 .tips {
+    width: 7.13rem;
+    left: .2rem;
+    top: -.09rem;
+    display: none;
+}
+.container-3 .tips.animate {
+    animation: show .6s;
+    -webkit-animation: show .6s;
+    -moz-animation: show .6s;
+    -o-animation: show .6s;
+
+    display: block;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
 }
 .container-3 .p1.float {
     opacity: 1;

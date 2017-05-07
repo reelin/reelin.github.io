@@ -61,7 +61,7 @@
         if (isFirst && !$('.modal').hasClass('animate')) {
             $('.container-2 .lihua1, .container-2 .lihua2, .container-2 .yanhua2, .container-2 .yanhua1').addClass('animate');
                 setTimeout(function() {
-                    $('.container-2').hide();
+                    // $('.container-2').hide();
                     $('.modal').addClass('animate');
                     isFirst = false;
                 }, 1000);
@@ -73,7 +73,7 @@
         $('.modal .title-f, .modal .candle').addClass('animate');
     });
     $('.modal').on('touchstart', '.candle', function() {
-        $('.modal').hide();
+        $('.modal, .container-2').hide();
         $('.container-3').show();
         $('.container-3 .font, .container-3 .candle').addClass('animate');
 

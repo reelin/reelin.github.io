@@ -884,8 +884,8 @@ html, body {
     width: .72rem;
     height: 1.76rem;
     z-index: 9;
-    transform: translateY(-7rem);
-    -webkit-transform: translateY(-7rem);
+    transform: translateY(-10rem);
+    -webkit-transform: translateY(-10rem);
 }
 
 .container-3 .candle.animate {
@@ -895,6 +895,8 @@ html, body {
     -o-animation: titlemove .6s;
     animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
+    animation-delay: 8.6s;
+    -webkit-animation-delay: 8.6s;
 }
 .container-3 .candle.animate .light {
     animation: scale 1s linear infinite;
@@ -915,6 +917,8 @@ html, body {
 }
 .container-3 .font {
     opacity: 0;
+    left: -1.5rem;
+    top: -1.8rem;
 }
 .container-3 .font.animate {
     animation: show .6s;
@@ -986,8 +990,7 @@ top: 2rem;
     -webkit-animation: overturn .3s linear;
     animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
-    animation-delay: 10s;
-    -webkit-animation-delay: 10s;
+
 }
 .container-3 .p2.animate {
     transform-origin: bottom;
@@ -997,8 +1000,8 @@ top: 2rem;
     -webkit-animation: overturn .3s linear;
     animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
-    animation-delay: 14s;
-    -webkit-animation-delay: 14s;
+    animation-delay: 4s;
+    -webkit-animation-delay: 4s;
 }
 .container-3 .p3.animate {
     transform-origin: bottom;
@@ -1008,8 +1011,8 @@ top: 2rem;
     -webkit-animation: overturn .3s linear;
     animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
-    animation-delay: 12s;
-    -webkit-animation-delay: 12s;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
 }
 .container-3 .p1.float {
     opacity: 1;

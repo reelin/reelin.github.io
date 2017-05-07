@@ -156,7 +156,6 @@ html, body {
     left: 4rem;
     bottom: 2rem;
     display: none;
-    z-index: 999;
 }
 .car-wrapper .c1.animate {
     display: block;
@@ -170,7 +169,6 @@ html, body {
     left: 4.4rem;
     bottom: 1.8rem;
     display: none;
-    z-index: 999;
 }
 .car-wrapper .c2.animate {
     display: block;

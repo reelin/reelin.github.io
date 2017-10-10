@@ -22,10 +22,10 @@ html, body {
     left: .4rem;
 }
 .drop1.js-animate {
-    animation: drop 4s;
-    -webkit-animation: drop 4s;
-    -o-animation: drop 4s;
-    -moz-animation: drop 4s;
+    animation: drop 5s;
+    -webkit-animation: drop 5s;
+    -o-animation: drop 5s;
+    -moz-animation: drop 5s;
     animation-delay: 1s;
     -webkit-animation-delay: 1s;
 }
@@ -33,10 +33,10 @@ html, body {
     left: 1.6rem;
 }
 .drop2.js-animate {
-    animation: drop 3s infinite;
-    -webkit-animation: drop 3s;
-    -o-animation: drop 3s;
-    -moz-animation: drop 3s;
+    animation: drop 4s infinite;
+    -webkit-animation: drop 34;
+    -o-animation: drop 4s;
+    -moz-animation: drop 4s;
     animation-delay: 2.3s;
     -webkit-animation-delay: 2.3s;
 }
@@ -45,10 +45,10 @@ html, body {
 
 }
 .drop3.js-animate {
-    animation: drop 3.5s;
+    animation: drop 4.5s;
     -webkit-animation: drop 3.5s;
-    -o-animation: drop 3.5s;
-    -moz-animation: drop 3.5s;
+    -o-animation: drop 4.5s;
+    -moz-animation: drop 4.5s;
     animation-delay: 1.5s;
     -webkit-animation-delay: 1.5s;
 }
@@ -56,10 +56,10 @@ html, body {
     left: 3.3rem;
 }
 .drop4.js-animate {
-    animation: drop 1.5s;
-    -webkit-animation: drop 1.5s;
-    -o-animation: drop 1.5s;
-    -moz-animation: drop 1.5s;
+    animation: drop 5.5s;
+    -webkit-animation: drop 3.5s;
+    -o-animation: drop 5.5s;
+    -moz-animation: drop 5.5s;
     animation-delay: 1.2s;
     -webkit-animation-delay: 1.2s;
 }
@@ -67,10 +67,10 @@ html, body {
     left: 4.5rem;
 }
 .drop5.js-animate {
-    animation: drop 2.5s;
-    -webkit-animation: drop 2.5s;
-    -o-animation: drop 2.5s;
-    -moz-animation: drop 2.5s;
+    animation: drop 3s;
+    -webkit-animation: drop 3s;
+    -o-animation: drop 3s;
+    -moz-animation: drop 3s;
     animation-delay: 2s;
     -webkit-animation-delay: 2s;
 }
@@ -78,10 +78,10 @@ html, body {
     right: .5rem;
 }
 .drop6.js-animate {
-    animation: drop 1.5s;
-    -webkit-animation: drop 1.5s;
-    -o-animation: drop 1.5s;
-    -moz-animation: drop 1.5s;
+    animation: drop 4.5s;
+    -webkit-animation: drop 4.5s;
+    -o-animation: drop 4.5s;
+    -moz-animation: drop 4.5s;
     animation-delay: 1.5s;
     -webkit-animation-delay: 1.5s;
 }

@@ -342,8 +342,8 @@ html, body {
       opacity:1;
   }
   to {
-      -webkit-transform: translateY(400px);
-      transform: translateY(400px);
+      -webkit-transform: translateY(300px);
+      transform: translateY(300px);
       opacity:0;
   }
 }
@@ -354,8 +354,8 @@ html, body {
       opacity:1;
   }
   to {
-      -webkit-transform: translateY(400px);
-      transform: translateY(400px);
+      -webkit-transform: translateY(300px);
+      transform: translateY(300px);
       opacity:0;
   }
 }

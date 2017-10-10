@@ -148,12 +148,14 @@ html, body {
     width: 3.36rem;
     left: .9rem;
     top: .97rem;
+    display: none;
 }
 .inner-container .banner .rotate.js-animate {
     animation: rotate 1s;
     -webkit-animation: rotate 1s;
     -o-animation: rotate 1s;
     -moz-animation: rotate 1s;
+    display: block;
 }
 .thumb-block {
     max-width: 3.5rem;
@@ -216,7 +218,7 @@ html, body {
 }
 .thumb-block.block9 {
     margin-bottom: 0rem;
-    padding-bottom: 4.3rem;
+    padding-bottom: 4.23rem;
 
 }
 @keyframes rotate {

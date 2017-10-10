@@ -20,51 +20,70 @@ html, body {
 }
 .drop1 {
     left: .4rem;
+}
+.drop1.js-animate {
     animation: drop 4s;
     -webkit-animation: drop 4s;
     -o-animation: drop 4s;
     -moz-animation: drop 4s;
-    animation-delay: 2s;
+    animation-delay: 1s;
+    -webkit-animation-delay: 1s;
 }
 .drop2 {
     left: 1.6rem;
+}
+.drop2.js-animate {
     animation: drop 3s infinite;
     -webkit-animation: drop 3s;
     -o-animation: drop 3s;
     -moz-animation: drop 3s;
     animation-delay: 2.3s;
+    -webkit-animation-delay: 2.3s;
 }
 .drop3 {
     left: 2.9rem;
+
+}
+.drop3.js-animate {
     animation: drop 3.5s;
     -webkit-animation: drop 3.5s;
     -o-animation: drop 3.5s;
     -moz-animation: drop 3.5s;
     animation-delay: 1.5s;
+    -webkit-animation-delay: 1.5s;
 }
 .drop4 {
     left: 3.3rem;
+}
+.drop4.js-animate {
     animation: drop 1.5s;
     -webkit-animation: drop 1.5s;
     -o-animation: drop 1.5s;
     -moz-animation: drop 1.5s;
-    animation-delay: 2.5s;
+    animation-delay: 1.2s;
+    -webkit-animation-delay: 1.2s;
 }
 .drop5 {
     left: 4.5rem;
+}
+.drop5.js-animate {
     animation: drop 2.5s;
     -webkit-animation: drop 2.5s;
     -o-animation: drop 2.5s;
     -moz-animation: drop 2.5s;
     animation-delay: 2s;
+    -webkit-animation-delay: 2s;
 }
 .drop6 {
     right: .5rem;
+}
+.drop6.js-animate {
     animation: drop 1.5s;
     -webkit-animation: drop 1.5s;
     -o-animation: drop 1.5s;
     -moz-animation: drop 1.5s;
-    animation-delay: 2.5s;
+    animation-delay: 1.5s;
+    -webkit-animation-delay: 1.5s;
 }
 .drop img {
     animation:rotate 1s infinite linear;
@@ -129,6 +148,8 @@ html, body {
     width: 3.36rem;
     left: .9rem;
     top: .97rem;
+}
+.inner-container .banner .rotate.js-animate {
     animation: rotate 1s;
     -webkit-animation: rotate 1s;
     -o-animation: rotate 1s;

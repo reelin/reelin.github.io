@@ -139,6 +139,26 @@ html, body {
     width: 5.08rem;
     margin: 0 auto;
 }
+.inner-container .banner .ring-animate .center {
+    width: 1.83rem;
+    position: absolute;
+    left: 1.66rem;
+    top: 1.17rem;
+    z-index: 9;
+}
+.inner-container .banner .js-rotate {
+    display: none;
+}
+.inner-container .banner .ring-animate .js-rotate {
+    width: 3.3rem;
+    position: absolute;
+    left: .9rem;
+    top: .38rem;
+    animation: rotate 1s;
+    -webkit-animation: rotate 1s;
+    -o-animation: rotate 1s;
+    -moz-animation: rotate 1s;
+}
 .inner-container .banner img {
     width: 5.08rem;
     display: block;
@@ -157,12 +177,12 @@ html, body {
     -moz-animation: rotate 1s;
     display: block;
 }
-.thumb-block {
-    max-width: 3.5rem;
-    min-width: 1.98rem;
+.thumb-block .text-block {
     margin-bottom: 6.08rem;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
+}
+.thumb-block .pic-block {
+    margin-bottom: 6rem;
     text-align: center;
 }
 .thumb-block p.title {
@@ -176,7 +196,13 @@ html, body {
     margin-top: .12rem;
     margin-bottom: .35rem;
 }
-.thumb-block a {
+.thumb-block .text-block {
+    max-width: 3.5rem;
+    min-width: 1.98rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.thumb-block .text-block a {
     display: inline-block;
     font-size: .25rem;
     color: #e99289;
@@ -201,36 +227,113 @@ html, body {
     margin-right: auto;
     display: block;
 }
-.thumb-block.block1 {
+.thumb-block.block1 .text-block{
     margin-bottom: 6.9rem;
 }
-.thumb-block.block5 {
-    margin-bottom: 7.1rem;
+.thumb-block.block1 .pic-block{
+    margin-bottom: 5.9rem;
 }
-.thumb-block.block6 {
-    margin-bottom: 6.4rem;
+.thumb-block.block2 .pic-block{
+    margin-bottom: 4.8rem;
 }
-.thumb-block.block7 {
+.thumb-block.block3 .pic-block{
+    margin-bottom: 4.6rem;
+}
+.thumb-block.block4 .pic-block{
+    margin-bottom: 4.9rem;
+}
+.thumb-block.block5 .pic-block{
+    margin-bottom: 5.8rem;
+}
+.thumb-block.block6 .pic-block{
     margin-bottom: 5rem;
 }
-.thumb-block.block8 {
+.thumb-block.block7 .pic-block{
+    margin-bottom: 4.2rem;
+}
+.thumb-block.block8 .pic-block{
+    margin-bottom: 2rem;
+}
+
+.thumb-block.block5 .text-block{
+    margin-bottom: 7.1rem;
+}
+.thumb-block.block6 .text-block{
+    margin-bottom: 6.4rem;
+}
+.thumb-block.block7 .text-block{
+    margin-bottom: 5rem;
+}
+.thumb-block.block8 .text-block{
     margin-bottom: 2.2rem;
 }
-.thumb-block.block9 {
+.thumb-block.block9 .text-block{
     margin-bottom: 0rem;
     padding-bottom: 4.23rem;
 
 }
+.thumb-block .pic-block {
+    display: none;
+
+}
+.thumb-block .pic-block .slide-wrapper {
+    overflow: hidden;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 4rem;
+}
+.thumb-block .pic-block .left img, .thumb-block .pic-block .right img {
+    width: .23rem;
+}
+.thumb-block .pic-block .left{
+    left: 0;
+    position: absolute;
+    padding: 100px .3rem;
+    display: none;
+}
+.thumb-block .pic-block .right {
+    right: 0;
+    position: absolute;
+    padding: 100px .3rem;
+}
+.thumb-block .pic-block .pic-wrapper {
+    width: 100000px;
+    overflow: hidden;
+}
+.thumb-block .pic-block .pic-slide {
+    display: inline-block;
+    float: left;
+    text-align: center;
+}
+.thumb-block .pic-block img {
+    width: 4rem;
+}
+.thumb-block .pic-block p {
+    font-size: .29rem;
+    line-height: .3rem;
+    margin-top: .48rem;
+}
 @keyframes rotate {
   from {
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
+      -webkit-transform: rotate(-90deg);
+      transform: rotate(-90deg);
   }
   to {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
 
   }
+}
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+    to {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
 }
 @keyframes drop {
   from {

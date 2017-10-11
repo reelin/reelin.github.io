@@ -1,5 +1,5 @@
 (function($) {
-    $("img").lazyload();
+
     $(window).on('load', function() {
         setTimeout(function() {
             $('.loading').animate({
@@ -67,6 +67,7 @@
         var $textBlock = $(this).parent();
         var $picBlock = $textBlock.next();
         $textBlock.hide();
+        $($picBlock.find('img')).lazyload();
         $picBlock.show();
     });
     var isAnim = false;

@@ -4,6 +4,13 @@ html, body {
     font-family: "Hiragino Sans GB",'-apple-system', Helvetica Neue, Helvetica, 'Microsoft YaHei',STHeiTi, sans-serif;
     width: 100%;
     font-weight: lighter;
+    height: 100%;
+    overflow: hidden;
+}
+.scroll {
+    height: 100%;
+    overflow-y: scroll;
+    z-index: 1;
 }
 .inner-container {
     padding-top: 2.55rem;
@@ -26,19 +33,19 @@ html, body {
     -webkit-animation: drop 5s;
     -o-animation: drop 5s;
     -moz-animation: drop 5s;
-    animation-delay: 1s;
-    -webkit-animation-delay: 1s;
+    animation-delay: 1.5s;
+    -webkit-animation-delay: 1.5s;
 }
 .drop2 {
     left: 1.6rem;
 }
 .drop2.js-animate {
-    animation: drop 4s infinite;
-    -webkit-animation: drop 34;
-    -o-animation: drop 4s;
-    -moz-animation: drop 4s;
-    animation-delay: 2.3s;
-    -webkit-animation-delay: 2.3s;
+    animation: drop 4.5s infinite;
+    -webkit-animation: drop 4.5s;
+    -o-animation: drop 4.5s;
+    -moz-animation: drop 4.5s;
+    animation-delay: 3s;
+    -webkit-animation-delay: 3s;
 }
 .drop3 {
     left: 2.9rem;
@@ -49,28 +56,28 @@ html, body {
     -webkit-animation: drop 3.5s;
     -o-animation: drop 4.5s;
     -moz-animation: drop 4.5s;
-    animation-delay: 1.5s;
-    -webkit-animation-delay: 1.5s;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
 }
 .drop4 {
     left: 3.3rem;
 }
 .drop4.js-animate {
-    animation: drop 5.5s;
-    -webkit-animation: drop 3.5s;
-    -o-animation: drop 5.5s;
-    -moz-animation: drop 5.5s;
-    animation-delay: 1.2s;
-    -webkit-animation-delay: 1.2s;
+    animation: drop 5s;
+    -webkit-animation: drop 5s;
+    -o-animation: drop 5s;
+    -moz-animation: drop 5s;
+    animation-delay: 3.5s;
+    -webkit-animation-delay: 3.5s;
 }
 .drop5 {
     left: 4.5rem;
 }
 .drop5.js-animate {
-    animation: drop 3s;
-    -webkit-animation: drop 3s;
-    -o-animation: drop 3s;
-    -moz-animation: drop 3s;
+    animation: drop 7s;
+    -webkit-animation: drop 7s;
+    -o-animation: drop 7s;
+    -moz-animation: drop 7s;
     animation-delay: 2s;
     -webkit-animation-delay: 2s;
 }
@@ -86,10 +93,8 @@ html, body {
     -webkit-animation-delay: 1.5s;
 }
 .drop img {
-    animation:rotate 1s infinite linear;
-    -webkit-animation:rotate 1s infinite linear;
-    -o-animation:rotate 1s infinite linear;
-    -moz-animation:rotate 1s infinite linear;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
 }
 .drop .img1 {
     width: 2rem;
@@ -154,10 +159,12 @@ html, body {
     position: absolute;
     left: .9rem;
     top: .38rem;
-    animation: rotate 1s;
-    -webkit-animation: rotate 1s;
-    -o-animation: rotate 1s;
-    -moz-animation: rotate 1s;
+    animation: rotate 2s;
+    -webkit-animation: rotate 2s;
+    -o-animation: rotate 2s;
+    -moz-animation: rotate 2s;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
 }
 .inner-container .banner img {
     width: 5.08rem;
@@ -171,10 +178,10 @@ html, body {
     display: none;
 }
 .inner-container .banner .rotate.js-animate {
-    animation: rotate 1s;
+    /*animation: rotate 1s;
     -webkit-animation: rotate 1s;
     -o-animation: rotate 1s;
-    -moz-animation: rotate 1s;
+    -moz-animation: rotate 1s;*/
     display: block;
 }
 .thumb-block .text-block {
@@ -197,7 +204,7 @@ html, body {
     margin-bottom: .35rem;
 }
 .thumb-block .text-block {
-    max-width: 3.5rem;
+    max-width: 4rem;
     min-width: 1.98rem;
     margin-left: auto;
     margin-right: auto;

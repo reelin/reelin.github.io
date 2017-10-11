@@ -11,11 +11,11 @@
     var minRange = 10;
     var isFirst = true;
     var distance;
-    $('.inner-container').on('touchstart', function(e) {
+    $('.scroll-wrapper').on('touchstart', function(e) {
         clientY_start = e.touches[0].clientY;
         console.log('s: ' + e.touches[0].clientY);
     });
-    $('.inner-container').on('touchmove', function(e) {
+    $('.scroll-wrapper').on('touchmove', function(e) {
         clientY_end = e.changedTouches[0].clientY;
         //判断移动的方向
         distance = clientY_end - clientY_start;
@@ -28,7 +28,7 @@
         console.log('isSlideDown: ' + isSlideDown);
     });
 
-    $('.inner-container').on('touchend', function(e) {
+    $('.scroll-wrapper').on('touchend', function(e) {
         // e.preventDefault();
         console.log('end: ' + distance);
         if (isSlideDown && isFirst) {

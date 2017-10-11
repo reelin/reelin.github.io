@@ -2,14 +2,21 @@
 
     $(document).on('ready',function() {
         $('img').lazyload();
+        setTimeout(function() {
+            $('.loading').animate({
+                opacity: 0
+            }, 1000, function() {
+                $('.loading').hide();
+            });
+        }, 2000);
     });
-    $(window).on('load', function() {
-        $('.loading').animate({
-            opacity: 0
-        }, 1000, function() {
-            $('.loading').hide();
-        });
-    });
+    // $(window).on('load', function() {
+    //     $('.loading').animate({
+    //         opacity: 0
+    //     }, 1000, function() {
+    //         $('.loading').hide();
+    //     });
+    // });
 
     var clientY_start;
     var clientY_end;

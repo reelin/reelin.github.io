@@ -10,12 +10,29 @@
     var isSlideDown = false;
     var minRange = 10;
     var isFirst = true;
+    var distance;
     $('.inner-container').on('touchstart', function(e) {
         clientY_start = e.touches[0].clientY;
+        console.log('s: ' + e.touches[0].clientY);
     });
+    $('.inner-container').on('touchmove', function(e) {
+        clientY_end = e.changedTouches[0].clientY;
+        //判断移动的方向
+        distance = clientY_end - clientY_start;
+        if(clientY_start + minRange < clientY_end) {
+           isSlideDown = false;
+        }
+        else if(clientY_start - minRange > clientY_end){
+           isSlideDown = true;
+        }
+        console.log('isSlideDown: ' + isSlideDown);
+    });
+
     $('.inner-container').on('touchend', function(e) {
-        e.preventDefault();
+        // e.preventDefault();
+        console.log('end: ' + distance);
         if (isSlideDown && isFirst) {
+
             isFirst = false;
             $('.inner-container .banner .ring').hide();
             $('.drop-animation').addClass('js-animate');
@@ -27,18 +44,18 @@
         }
 
     });
-    $('.inner-container').on('touchmove',function (e) {
-        e.preventDefault();
-        clientY_end = e.changedTouches[0].clientY;
-        //判断移动的方向
-        // distance = clientY_end - clientY_start;
-        if(clientY_start + minRange < clientY_end) {
-           isSlideDown = false;
-        }
-        else if(clientY_start - minRange > clientY_end){
-           isSlideDown = true;
-        }
-    });
+    // $('.inner-container').on('touchmove',function (e) {
+    //     e.preventDefault();
+        // clientY_end = e.changedTouches[0].clientY;
+        // //判断移动的方向
+        // // distance = clientY_end - clientY_start;
+        // if(clientY_start + minRange < clientY_end) {
+        //    isSlideDown = false;
+        // }
+        // else if(clientY_start - minRange > clientY_end){
+        //    isSlideDown = true;
+        // }
+    // });
     $('.thumb-block .text-block a').on('touchstart', function(e) {
         e.preventDefault();
 

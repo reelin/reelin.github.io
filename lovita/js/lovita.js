@@ -1,14 +1,13 @@
 (function($) {
 
-    $(document).on('ready', function() {
+
+    $(window).on('load', function() {
         $('img').lazyload();
-        setTimeout(function() {
-            $('.loading').animate({
-                opacity: 0
-            }, 1000, function() {
-                $('.loading').hide();
-            });
-        }, 1500);
+        $('.loading').animate({
+            opacity: 0
+        }, 1000, function() {
+            $('.loading').hide();
+        });
     });
 
     var clientY_start;

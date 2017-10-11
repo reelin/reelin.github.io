@@ -1,10 +1,14 @@
 (function($) {
-    // $('.ring img').on('load', function() {
-    //     $('.ring .rotate, .drop-animation').addClass('js-animate');
-    //     // setTimeOut(function(){
-    //     //     $('.ring .rotate').removeClass('js-animate');
-    //     // }, 1);
-    // });
+    $(window).on('load', function() {
+        setTimeout(function() {
+            $('.loading').animate({
+                opacity: 0
+            }, 1000, function() {
+                $('.loading').hide();
+            });
+        }, 1500);
+    });
+
     var clientY_start;
     var clientY_end;
     var isSlideDown = false;

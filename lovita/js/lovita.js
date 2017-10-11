@@ -6,6 +6,7 @@
                 opacity: 0
             }, 1000, function() {
                 $('.loading').hide();
+                $('img').lazyload();
             });
         }, 1500);
     });
@@ -67,7 +68,6 @@
         var $textBlock = $(this).parent();
         var $picBlock = $textBlock.next();
         $textBlock.hide();
-        $($picBlock.find('img')).lazyload();
         $picBlock.show();
     });
     var isAnim = false;

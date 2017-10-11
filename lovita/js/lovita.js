@@ -3,7 +3,7 @@
         $('.loading').animate({
             opacity: 0
         }, 1000, function() {
-            $('.loading').hide();
+            $('.loading').css('display', 'none');
         });
     });
 

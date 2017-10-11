@@ -1,10 +1,13 @@
 (function($) {
+    $("img").lazyload();
     $(window).on('load', function() {
-        $('.loading').animate({
-            opacity: 0
-        }, 1000, function() {
-            $('.loading').css('display', 'none');
-        });
+        setTimeout(function() {
+            $('.loading').animate({
+                opacity: 0
+            }, 1000, function() {
+                $('.loading').hide();
+            });
+        }, 1500);
     });
 
     var clientY_start;

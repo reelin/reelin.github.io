@@ -166,21 +166,20 @@ html, body {
     width: 5.08rem;
     margin: 0 auto;
 }
-.inner-container .banner .ring-animate .center {
+.inner-container .banner .ring .center {
     width: 1.83rem;
     position: absolute;
     left: 1.66rem;
     top: 1.17rem;
-    z-index: 9;
+    z-index: 1;
 }
-.inner-container .banner .js-rotate {
-    display: none;
-}
-.inner-container .banner .ring-animate .js-rotate {
+.inner-container .banner .ring .js-rotate {
     width: 3.3rem;
     position: absolute;
     left: .9rem;
     top: .38rem;
+}
+.inner-container .banner .ring-animate .js-rotate {
     animation: rotate 2s;
     -webkit-animation: rotate 2s;
     -o-animation: rotate 2s;

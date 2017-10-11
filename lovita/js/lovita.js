@@ -1,12 +1,12 @@
 (function($) {
 
-    $(window).on('load', function() {
+    $(document).on('ready', function() {
+        $('img').lazyload();
         setTimeout(function() {
             $('.loading').animate({
                 opacity: 0
             }, 1000, function() {
                 $('.loading').hide();
-                $('img').lazyload();
             });
         }, 1500);
     });

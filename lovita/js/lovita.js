@@ -1,8 +1,9 @@
 (function($) {
 
-
-    $(window).on('load', function() {
+    $(document).on('ready',function() {
         $('img').lazyload();
+    });
+    $(window).on('load', function() {
         $('.loading').animate({
             opacity: 0
         }, 1000, function() {

@@ -1,12 +1,10 @@
 (function($) {
     $(window).on('load', function() {
-        setTimeout(function() {
-            $('.loading').animate({
-                opacity: 0
-            }, 1000, function() {
-                $('.loading').hide();
-            });
-        }, 1500);
+        $('.loading').animate({
+            opacity: 0
+        }, 1000, function() {
+            $('.loading').hide();
+        });
     });
 
     var clientY_start;

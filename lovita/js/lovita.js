@@ -1,22 +1,23 @@
 (function($) {
 
-    $(document).on('ready',function() {
-        $('img').lazyload();
-        setTimeout(function() {
-            $('.loading').animate({
-                opacity: 0
-            }, 1000, function() {
-                $('.loading').hide();
-            });
-        }, 2000);
-    });
-    // $(window).on('load', function() {
-    //     $('.loading').animate({
-    //         opacity: 0
-    //     }, 1000, function() {
-    //         $('.loading').hide();
-    //     });
+    // $(document).on('ready',function() {
+    //     $('img').lazyload();
+    //     setTimeout(function() {
+    //         $('.loading').animate({
+    //             opacity: 0
+    //         }, 1000, function() {
+    //             $('.loading').hide();
+    //         });
+    //     }, 2000);
     // });
+    $(window).on('load', function() {
+        $('img').lazyload();
+        $('.loading').animate({
+            opacity: 0
+        }, 1000, function() {
+            $('.loading').hide();
+        });
+    });
 
     var clientY_start;
     var clientY_end;

@@ -171,7 +171,7 @@
         }
     });
 
-    $('.thumb-block .text-block a').on('touchstart', function(e) {
+    $('.thumb-block .text-block a.js-pic').on('touchstart', function(e) {
         e.preventDefault();
         var $textBlock = $(this).parent();
         var $picBlock = $textBlock.next();

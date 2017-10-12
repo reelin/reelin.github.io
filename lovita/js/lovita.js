@@ -29,6 +29,7 @@
             setTimeout(function() {
                 $('.inner-container .banner .ring').show();
                 $('.inner-container .banner .js-rotate').hide().removeClass('ring-animate');
+                $('.drop-animation').removeClass('js-animate');
             }, 3000);
         }, 1000);
     });
@@ -46,38 +47,49 @@
     var distance;
     var isPic = false;
     var $picWrapper;
-    // $('.inner-container').on('touchstart', function(e) {
-    //     clientY_start = e.touches[0].clientY;
-    //     clientX_start = e.touches[0].clientX;
-    //     pageY_start = e.touches[0].pageY;
-    //     console.log('s: ' + pageY_start);
-    // });
-    // $('.inner-container').on('touchmove', function(e) {
-    //     clientY_end = e.changedTouches[0].clientY;
-    //     clientX_end = e.changedTouches[0].clientX;
-    //     //判断移动的方向
-    //     console.log('e:' + e.changedTouches[0].pageY);
-    //     distance = Math.abs(e.changedTouches[0].pageY - pageY_start);
-    //     $picWrapper = $(e.changedTouches[0].target).parents('.pic-block');
-    //     isPic = ($picWrapper.length != 0);
-    //     console.log(isPic);
-    //     if(clientY_start + minRange < clientY_end) {
-    //        isSlideDown = false;
-    //        console.log('上');
-    //     } else if(clientY_start - minRange > clientY_end){
-    //        isSlideDown = true;
-    //        console.log('下');
-    //     }
-    //     if (clientX_start + minLRange < clientX_end) {
-    //
-    //         isSlideLeft = false;
-    //         console.log('向右滑');
-    //     } else if (clientX_start - minLRange > clientX_end) {
-    //         isSlideLeft = true;
-    //         console.log('向左滑');
-    //     }
-    //
-    // });
+    $('.inner-container').on('touchstart', function(e) {
+        clientY_start = e.touches[0].clientY;
+        clientX_start = e.touches[0].clientX;
+        pageY_start = e.touches[0].pageY;
+        console.log('s: ' + pageY_start);
+    });
+    $('.inner-container').on('touchmove', function(e) {
+        clientY_end = e.changedTouches[0].clientY;
+        clientX_end = e.changedTouches[0].clientX;
+        //判断移动的方向
+        distance = Math.abs(e.changedTouches[0].pageY - clientY_end);
+        console.log('dis:' + distance);
+
+        if(clientY_start + minRange < clientY_end) {
+           isSlideDown = 'u';
+           console.log('上');
+        } else if(clientY_start - minRange > clientY_end){
+           isSlideDown = 'd';
+           console.log('下');
+        }
+
+
+    });
+    $('.inner-container').on('touchend', function(e) {
+        if(isSlideDown == 'u' && distance < 100) {
+            console.log('yep');
+            $('.inner-container .banner .ring').hide();
+            $('.drop-animation').addClass('js-animate');
+            $('.inner-container .banner .js-rotate').show().addClass('ring-animate');
+
+            setTimeout(function() {
+                $('.inner-container .banner .ring .js-rotate').css({
+                    'transform': 'rotate(0deg)',
+                    '-webkit-transform': 'rotate(0deg)'
+                });
+            }, 1000);
+            setTimeout(function() {
+                $('.inner-container .banner .ring').show();
+                $('.inner-container .banner .js-rotate').hide().removeClass('ring-animate');
+                $('.drop-animation').removeClass('js-animate');
+            }, 3000);
+        }
+    });
     // var y = 0;
     // $('.inner-container').on('touchend', function(e) {
     //     // e.preventDefault();

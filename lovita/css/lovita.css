@@ -157,6 +157,8 @@ html, body {
     height: .28rem;
     margin: 0;
     display: block;
+    animation: twinkle 1s infinite;
+    -webkit-animation: twinkle 1s infinite;
 }
 .inner-container .banner h1 img {
     width: 3.14rem;

@@ -47,6 +47,7 @@
     var distance;
     var isPic = false;
     var $picWrapper;
+    var isRotate = false;
     $('.inner-container').on('touchstart', function(e) {
         clientY_start = e.touches[0].clientY;
         clientX_start = e.touches[0].clientX;
@@ -63,8 +64,9 @@
         if(clientY_start + minRange < clientY_end) {
            isSlideDown = 'u';
            console.log('上');
-           if(distance < 100) {
+           if(!isRotate && distance < 100) {
                console.log('yep');
+               isRotate = true;
                $('.inner-container .banner .ring').hide();
                $('.drop-animation').addClass('js-animate');
                $('.inner-container .banner .js-rotate').show().addClass('ring-animate');
@@ -79,6 +81,7 @@
                    $('.inner-container .banner .ring').show();
                    $('.inner-container .banner .js-rotate').hide().removeClass('ring-animate');
                    $('.drop-animation').removeClass('js-animate');
+                   isRotate = false;
                }, 3000);
            }
         } else if(clientY_start - minRange > clientY_end){

@@ -10,10 +10,10 @@
             opacity: 0
         }, 1000, function() {
             $('.loading').hide();
-            // $('body,html').css({
-            //     'height': 'auto',
-            //     'overflow': 'auto'
-            // });
+            $('body,html').css({
+                'height': 'auto',
+                'overflow': 'auto'
+            });
         });
         setTimeout(function() {
             $('.inner-container .banner .ring').hide();

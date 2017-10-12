@@ -71,7 +71,7 @@
 
     });
     $('.inner-container').on('touchend', function(e) {
-        if(isSlideDown == 'u' && distance < 100) {
+        if(isSlideDown == 'u' && distance < 400) {
             console.log('yep');
             $('.inner-container .banner .ring').hide();
             $('.drop-animation').addClass('js-animate');

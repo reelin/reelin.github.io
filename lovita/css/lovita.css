@@ -1,7 +1,7 @@
 html, body {
     background: #fff;
     color: #222;
-    font-family: "Hiragino Sans GB",'-apple-system', Helvetica Neue, Helvetica, 'Microsoft YaHei',STHeiTi, sans-serif;
+    font-family: '-apple-system', Helvetica Neue, Helvetica, 'Microsoft YaHei',STHeiTi, sans-serif;
     width: 100%;
     font-weight: lighter;
     height: 100%;
@@ -218,7 +218,7 @@ html, body {
     display: block;
 }
 .thumb-block .text-block {
-    margin-bottom: 6.08rem;
+    margin-bottom: 7.1rem;
     text-align: center;
 }
 .thumb-block .pic-block {
@@ -268,7 +268,10 @@ html, body {
     display: block;
 }
 .thumb-block.block1 .text-block{
-    margin-bottom: 6.9rem;
+    margin-bottom: 7.3rem;
+}
+.thumb-block.block3 .text-block{
+    margin-bottom: 6rem;
 }
 .thumb-block.block1 .pic-block{
     margin-bottom: 5.9rem;
@@ -299,7 +302,7 @@ html, body {
     margin-bottom: 7.1rem;
 }
 .thumb-block.block6 .text-block{
-    margin-bottom: 6.4rem;
+    margin-bottom: 6rem;
 }
 .thumb-block.block7 .text-block{
     margin-bottom: 5rem;

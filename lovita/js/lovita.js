@@ -2,49 +2,81 @@
 
     // $(document).on('ready',function() {
     //     $('img').lazyload();
-    //     setTimeout(function() {
-    //         $('.loading').animate({
-    //             opacity: 0
-    //         }, 1000, function() {
-    //             $('.loading').hide();
-    //         });
-    //     }, 2000);
+
     // });
     $(window).on('load', function() {
         $('img').lazyload();
-        $('.loading').animate({
-            opacity: 0
-        }, 1000, function() {
-            $('.loading').hide();
-        });
+        // setTimeout(function() {
+            $('.loading').animate({
+                opacity: 0
+            }, 1000, function() {
+                $('.loading').hide();
+            });
+        // }, 1000);
     });
 
     var clientY_start;
     var clientY_end;
+    var clientX_start;
+    var pageY_start;
+    var clientX_end;
     var isSlideDown = false;
+    var isSlideLeft = false;
     var minRange = 10;
+    var minLRange = 100;
     var isFirst = true;
     var distance;
     $('.scroll-wrapper').on('touchstart', function(e) {
         clientY_start = e.touches[0].clientY;
-        console.log('s: ' + e.touches[0].clientY);
+        clientX_start = e.touches[0].clientX;
+        pageY_start = e.touches[0].pageY;
+        console.log('s: ' + pageY_start);
     });
     $('.scroll-wrapper').on('touchmove', function(e) {
         clientY_end = e.changedTouches[0].clientY;
+        clientX_end = e.changedTouches[0].clientX;
         //判断移动的方向
-        distance = clientY_end - clientY_start;
+        console.log('e:' + e.changedTouches[0].pageY);
+        distance = Math.abs(e.changedTouches[0].pageY - pageY_start);
         if(clientY_start + minRange < clientY_end) {
            isSlideDown = false;
-        }
-        else if(clientY_start - minRange > clientY_end){
+           console.log('上');
+        } else if(clientY_start - minRange > clientY_end){
            isSlideDown = true;
+           console.log('下');
         }
-        console.log('isSlideDown: ' + isSlideDown);
-    });
+        if (clientX_start + minLRange < clientX_end) {
 
+            isSlideLeft = false;
+            console.log('向右滑');
+        } else if (clientX_start - minLRange > clientX_end) {
+            isSlideLeft = true;
+            console.log('向左滑');
+        }
+
+    });
+    var y = 0;
     $('.scroll-wrapper').on('touchend', function(e) {
         // e.preventDefault();
-        console.log('end: ' + distance);
+
+        // distance = e.touches[0].pageY - pageY_start;
+        console.log('dis: ' + distance);
+        y = y + distance;
+        // if (isSlideDown) {
+        //     $('.drop-animation.drop1').animate({
+        //         '-webkit-transform': 'translateY('+ y + 'px)',
+        //         'transform': 'translateY('+ y + 'px)',
+        //         'opacity': '1'
+        //     }, 1000);
+        //     setTimeout(function() {
+        //         $('.drop-animation.drop2').animate({
+        //             '-webkit-transform': 'translateY('+ y + 'px)',
+        //             'transform': 'translateY('+ y + 'px)',
+        //             'opacity': '1'
+        //         }, 1000);
+        //     }, 500);
+        //
+        // }
         if (isSlideDown && isFirst) {
 
             isFirst = false;
@@ -56,20 +88,11 @@
                 $('.inner-container .banner .js-rotate').hide().removeClass('ring-animate');
             }, 5000);
         }
+        if ($(e.touches[0].target) && !isSlideLeft) {
 
+        }
     });
-    // $('.inner-container').on('touchmove',function (e) {
-    //     e.preventDefault();
-        // clientY_end = e.changedTouches[0].clientY;
-        // //判断移动的方向
-        // // distance = clientY_end - clientY_start;
-        // if(clientY_start + minRange < clientY_end) {
-        //    isSlideDown = false;
-        // }
-        // else if(clientY_start - minRange > clientY_end){
-        //    isSlideDown = true;
-        // }
-    // });
+
     $('.thumb-block .text-block a').on('touchstart', function(e) {
         e.preventDefault();
 
@@ -81,14 +104,21 @@
     var isAnim = false;
     $('.thumb-block .pic-block .right').on('touchstart', function(e) {
         e.preventDefault();
-        var $slide = $(this).parent().find('.pic-wrapper');
+        slideRight(this);
+    });
+    $('.thumb-block .pic-block .left').on('touchstart', function(e) {
+        e.preventDefault();
+        slideLeft(this);
+    });
+    function slideRight(elem) {
+        var $slide = $(elem).parent().find('.pic-wrapper');
         var $img = $slide.find('.pic-slide img');
         var $active = $slide.find('.pic-slide img.active');
-        var width = $(this).parent().find('.slide-wrapper').width();
+        var width = $(elem).parent().find('.slide-wrapper').width();
         var length = $img.length - 1;
         var index = $img.index($active);
         var marginLeft = parseInt($slide.css('margin-left'));
-        var $left = $(this).prev();
+        var $left = $(elem).prev();
         if (!isAnim && index < length) {
             isAnim = true;
             $slide.animate({
@@ -100,21 +130,20 @@
                 isAnim = false;
             });
             if (index == length -1) {
-                $(this).hide();
+                $(elem).hide();
             }
         } else {
-            $(this).hide();
+            $(elem).hide();
         }
-    });
-    $('.thumb-block .pic-block .left').on('touchstart', function(e) {
-        e.preventDefault();
-        var $slide = $(this).parent().find('.pic-wrapper');
+    }
+    function slideLeft(elem) {
+        var $slide = $(elem).parent().find('.pic-wrapper');
         var $img = $slide.find('.pic-slide img');
         var $active = $slide.find('.pic-slide img.active');
-        var width = $(this).parent().find('.slide-wrapper').width();
+        var width = $(elem).parent().find('.slide-wrapper').width();
         var index = $img.index($active);
         var marginLeft = parseInt($slide.css('margin-left'));
-        var $right = $(this).next();
+        var $right = $(elem).next();
         if (!isAnim && index > 0) {
             isAnim = true;
             $slide.animate({
@@ -126,10 +155,10 @@
                 isAnim = false;
             });
             if (index == 1) {
-                $(this).hide();
+                $(elem).hide();
             }
         } else {
-            $(this).hide();
+            $(elem).hide();
         }
-    });
+    }
 })(Zepto);

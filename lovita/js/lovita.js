@@ -10,10 +10,10 @@
             opacity: 0
         }, 1000, function() {
             $('.loading').hide();
-            $('body,html').css({
-                'height': 'auto',
-                'overflow': 'auto'
-            });
+            // $('body,html').css({
+            //     'height': 'auto',
+            //     'overflow': 'auto'
+            // });
         });
         setTimeout(function() {
             $('.inner-container .banner .ring').hide();
@@ -91,6 +91,10 @@
 
 
     });
+    $('window').on('scroll',function(e){
+
+console.log('1')
+});
     $('.inner-container').on('touchend', function(e) {
         // if(isSlideDown == 'u' && distance < 300) {
         //     console.log('yep');

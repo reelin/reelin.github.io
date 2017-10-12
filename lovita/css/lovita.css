@@ -26,9 +26,9 @@ html, body {
     -webkit-animation: twinkle 1.5s infinite;
 }
 .scroll {
-    height: 100%;
+    /*height: 100%;
     overflow-y: scroll;
-    z-index: 1;
+    z-index: 1;*/
 }
 .inner-container {
     padding-top: 2.55rem;
@@ -168,6 +168,11 @@ html, body {
     width: 4.5rem;
     margin: 0 auto;
 }
+.inner-container .banner .ring .origin {
+    display: block;
+    width: 4rem;
+    margin: 0 auto;
+}
 .inner-container .banner .ring .center {
     width: 1.64rem;
     position: absolute;
@@ -180,9 +185,10 @@ html, body {
     position: absolute;
     left: .9rem;
     top: .5rem;
-    /*transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);*/
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
 }
+
 .inner-container .banner .ring-animate .js-rotate {
     animation: rotate 1.5s;
     -webkit-animation: rotate 1.5s;

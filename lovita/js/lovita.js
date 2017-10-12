@@ -6,13 +6,31 @@
     // });
     $(window).on('load', function() {
         $('img').lazyload();
-        // setTimeout(function() {
-            $('.loading').animate({
-                opacity: 0
-            }, 1000, function() {
-                $('.loading').hide();
+        $('.loading').animate({
+            opacity: 0
+        }, 1000, function() {
+            $('.loading').hide();
+            $('body,html').css({
+                'height': 'auto',
+                'overflow': 'auto'
             });
-        // }, 1000);
+        });
+        setTimeout(function() {
+            $('.inner-container .banner .ring').hide();
+            $('.drop-animation').addClass('js-animate');
+            $('.inner-container .banner .js-rotate').show().addClass('ring-animate');
+
+            setTimeout(function() {
+                $('.inner-container .banner .ring .js-rotate').css({
+                    'transform': 'rotate(0deg)',
+                    '-webkit-transform': 'rotate(0deg)'
+                });
+            }, 1000);
+            setTimeout(function() {
+                $('.inner-container .banner .ring').show();
+                $('.inner-container .banner .js-rotate').hide().removeClass('ring-animate');
+            }, 5000);
+        }, 1000);
     });
 
     var clientY_start;
@@ -80,13 +98,13 @@
         if (isSlideDown && isFirst) {
 
             isFirst = false;
-            $('.inner-container .banner .ring').hide();
-            $('.drop-animation').addClass('js-animate');
-            $('.inner-container .banner .js-rotate').show().addClass('ring-animate');
-            setTimeout(function() {
-                $('.inner-container .banner .ring').show();
-                $('.inner-container .banner .js-rotate').hide().removeClass('ring-animate');
-            }, 5000);
+            // $('.inner-container .banner .ring').hide();
+            // $('.drop-animation').addClass('js-animate');
+            // $('.inner-container .banner .js-rotate').show().addClass('ring-animate');
+            // setTimeout(function() {
+            //     $('.inner-container .banner .ring').show();
+            //     $('.inner-container .banner .js-rotate').hide().removeClass('ring-animate');
+            // }, 5000);
         }
         if ($(e.touches[0].target) && !isSlideLeft) {
 

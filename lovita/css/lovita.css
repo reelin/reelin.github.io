@@ -229,6 +229,7 @@ html, body {
     font-size: .5rem;
     line-height: .5rem;
     margin-bottom: .3rem;
+    font-weight: 400;
 }
 .thumb-block p.info {
     line-height: .4rem;

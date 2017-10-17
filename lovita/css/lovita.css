@@ -33,7 +33,7 @@ html, body {
 .inner-container {
     padding-top: 2.55rem;
     width: 100%;
-    background: url('../imgs/background.png') no-repeat center top;
+    background: url('../imgs/background_n.png') no-repeat center top;
     background-size: 100%;
     position: relative;
 }

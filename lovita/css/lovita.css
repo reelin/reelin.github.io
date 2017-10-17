@@ -383,8 +383,8 @@ html, body {
     display: block;
     width: 1rem;
     opacity: 0;
-    animation: twinkle 1.5s 2;
-    -webkit-animation: twinkle 1.5s 2;
+    animation: twinkle 1.5s infinite;
+    -webkit-animation: twinkle 1.5s infinite;
 }
 .thumb-block .pic-block .pic-wrapper .s1 {
     left: .7rem;

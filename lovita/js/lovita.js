@@ -1,10 +1,7 @@
 (function($) {
 
-    // $(document).on('ready',function() {
-    //     $('img').lazyload();
 
-    // });
-    $(window).on('load', function() {
+    $(document).ready(function() {
         $('.lazyload').lazyload();
         $('.loading').animate({
             opacity: 0
@@ -15,9 +12,11 @@
                 'overflow': 'auto'
             });
         });
-        setTimeout(animateHandler, 1500);
+        setTimeout(animateHandler, 2000);
     });
+
     var handler = null;
+    // 首屏动画
     function animateHandler() {
         isRotate = true;
 
@@ -48,6 +47,7 @@
 
         handler = setTimeout(dropHandler, 12000);
     }
+
     function dropHandler() {
         $('.drop-animation').removeClass('js-animate');
     }
@@ -70,33 +70,30 @@
         clientY_start = e.touches[0].clientY;
         clientX_start = e.touches[0].clientX;
         pageY_start = e.touches[0].pageY;
-        console.log('s: ' + pageY_start);
+        // console.log('s: ' + pageY_start);
     });
     $('.inner-container').on('touchmove', function(e) {
         clientY_end = e.changedTouches[0].clientY;
         clientX_end = e.changedTouches[0].clientX;
         //判断移动的方向
         distance = Math.abs(e.changedTouches[0].pageY - clientY_end);
-        console.log('dis:' + distance);
+        // console.log('dis:' + distance);
 
         if(clientY_start + minRange < clientY_end) {
            isSlideDown = 'u';
-           console.log('上');
+        //    console.log('上');
            if(!isRotate && distance < 100) {
-               console.log('yep');
+            //    console.log('yep');
                animateHandler();
            }
         } else if(clientY_start - minRange > clientY_end){
            isSlideDown = 'd';
-           console.log('下');
+        //    console.log('下');
         }
 
 
     });
-    $('window').on('scroll',function(e){
 
-console.log('1')
-});
     $('.inner-container').on('touchend', function(e) {
         // if(isSlideDown == 'u' && distance < 300) {
         //     console.log('yep');
@@ -162,17 +159,13 @@ console.log('1')
     $('.thumb-block').on('touchmove',function(e) {
         clientX_end = e.changedTouches[0].clientX;
         if (clientX_start + minLRange < clientX_end) {
-
             isSlideLeft = 'r';
-            console.log('向右滑');
         } else if (clientX_start - minLRange > clientX_end) {
             isSlideLeft = 'l';
-            console.log('向左滑');
         }
 
     });
     $('.thumb-block').on('touchend',function(e) {
-        console.log('1')
         if (isSlideLeft == 'l') {
             slideRight($(this).find('a.right'));
         } else if(isSlideLeft == 'r') {

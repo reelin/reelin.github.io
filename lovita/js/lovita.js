@@ -1,8 +1,9 @@
 (function($) {
 
-    $('.lazyload').lazyload();
     $(window).on('load', function() {
-
+        $('.lazyload').each(function() {
+            $(this).attr('src', $(this).attr('data-src'));
+        });
         $('.loading').animate({
             opacity: 0
         }, 1000, function() {

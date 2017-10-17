@@ -1,8 +1,8 @@
 (function($) {
 
+    $('.lazyload').lazyload();
+    $(window).load(function() {
 
-    $(document).ready(function() {
-        $('.lazyload').lazyload();
         $('.loading').animate({
             opacity: 0
         }, 1000, function() {

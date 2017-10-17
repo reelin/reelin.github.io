@@ -52,33 +52,33 @@ html, body {
 }
 .drop1.js-animate {
     display: block;
-    animation: drop 7s;
-    -webkit-animation: drop 7s;
-    -o-animation: drop 7s;
-    -moz-animation: drop 7s;
-    animation-delay: 1.5s;
-    -webkit-animation-delay: 1.5s;
+    animation: drop 8s;
+    -webkit-animation: drop 8s;
+    -o-animation: drop 8s;
+    -moz-animation: drop 8s;
+    animation-delay: 1s;
+    -webkit-animation-delay: 1s;
 }
 .drop2 {
     left: 1.6rem;
 }
 .drop2.js-animate {
-    animation: drop 5.5s infinite;
-    -webkit-animation: drop 5.5s;
-    -o-animation: drop 5.5s;
-    -moz-animation: drop 5.5s;
-    animation-delay: 1s;
-    -webkit-animation-delay: 1s;
+    animation: drop 8s infinite;
+    -webkit-animation: drop 8s;
+    -o-animation: drop 8s;
+    -moz-animation: drop 8s;
+    animation-delay: 3s;
+    -webkit-animation-delay: 3s;
 }
 .drop3 {
     left: 2.9rem;
 
 }
 .drop3.js-animate {
-    animation: drop 6.5s;
-    -webkit-animation: drop 6.5s;
-    -o-animation: drop 6.5s;
-    -moz-animation: drop 6.5s;
+    animation: drop 8s;
+    -webkit-animation: drop 8s;
+    -o-animation: drop 8s;
+    -moz-animation: drop 8s;
     animation-delay: 2s;
     -webkit-animation-delay: 2s;
 }
@@ -86,23 +86,23 @@ html, body {
     left: 3.3rem;
 }
 .drop4.js-animate {
-    animation: drop 5s;
-    -webkit-animation: drop 5s;
-    -o-animation: drop 5s;
-    -moz-animation: drop 5s;
-    animation-delay: 1.5s;
-    -webkit-animation-delay: 1.5s;
+    animation: drop 8s;
+    -webkit-animation: drop 8s;
+    -o-animation: drop 8s;
+    -moz-animation: drop 8s;
+    animation-delay: 4s;
+    -webkit-animation-delay: 4s;
 }
 .drop5 {
     left: 4.5rem;
 }
 .drop5.js-animate {
-    animation: drop 7s;
-    -webkit-animation: drop 7s;
-    -o-animation: drop 7s;
-    -moz-animation: drop 7s;
-    animation-delay: 2s;
-    -webkit-animation-delay: 2s;
+    animation: drop 8s;
+    -webkit-animation: drop 8s;
+    -o-animation: drop 8s;
+    -moz-animation: drop 8s;
+    animation-delay: 3.5s;
+    -webkit-animation-delay: 3.5s;
 }
 .drop6 {
     right: .5rem;
@@ -114,6 +114,39 @@ html, body {
     -moz-animation: drop 8s;
     animation-delay: 1.5s;
     -webkit-animation-delay: 1.5s;
+}
+.drop7 {
+    right: 1rem;
+}
+.drop7.js-animate {
+    animation: drop 8s;
+    -webkit-animation: drop 8s;
+    -o-animation: drop 8s;
+    -moz-animation: drop 8s;
+    animation-delay: 2.5s;
+    -webkit-animation-delay: 2.5s;
+}
+.drop8 {
+    left: 0rem;
+}
+.drop8.js-animate {
+    animation: drop 7s;
+    -webkit-animation: drop 7s;
+    -o-animation: drop 7s;
+    -moz-animation: drop 7s;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+}
+.drop9 {
+    right: 0rem;
+}
+.drop9.js-animate {
+    animation: drop 6s;
+    -webkit-animation: drop 6s;
+    -o-animation: drop 6s;
+    -moz-animation: drop 6s;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
 }
 .drop img {
     animation-timing-function: ease-in;
@@ -348,13 +381,24 @@ html, body {
 .thumb-block .pic-block .pic-wrapper .shining {
     position: absolute;
     display: block;
-    width: 2rem;
+    width: 1rem;
     opacity: 0;
     animation: twinkle 1.5s 2;
     -webkit-animation: twinkle 1.5s 2;
 }
-.thumb-block .pic-block .pic-wrapper .shining.shining-s {
-    width: 3rem;
+.thumb-block .pic-block .pic-wrapper .s1 {
+    left: .7rem;
+}
+.thumb-block .pic-block .pic-wrapper .s2 {
+    left: .3rem;
+    top: 40px;
+}
+.thumb-block .pic-block .pic-wrapper .s3 {
+    left: 1.7rem;
+}
+.thumb-block .pic-block .pic-wrapper .s4 {
+    left: 1.3rem;
+    top: 60px;
 }
 .thumb-block .pic-block .pic-slide {
     display: inline-block;

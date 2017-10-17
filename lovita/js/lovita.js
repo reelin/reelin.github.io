@@ -15,24 +15,42 @@
                 'overflow': 'auto'
             });
         });
-        setTimeout(function() {
-            $('.inner-container .banner .ring').hide();
-            $('.drop-animation').addClass('js-animate');
-            $('.inner-container .banner .js-rotate').show().addClass('ring-animate');
-
-            setTimeout(function() {
-                $('.inner-container .banner .ring .js-rotate').css({
-                    'transform': 'rotate(0deg)',
-                    '-webkit-transform': 'rotate(0deg)'
-                });
-            }, 1000);
-            setTimeout(function() {
-                $('.inner-container .banner .ring').show();
-                $('.inner-container .banner .js-rotate').hide().removeClass('ring-animate');
-                $('.drop-animation').removeClass('js-animate');
-            }, 3000);
-        }, 1000);
+        setTimeout(animateHandler, 1500);
     });
+    var handler = null;
+    function animateHandler() {
+        isRotate = true;
+
+        // $('.inner-container .banner .ring').hide();
+        if (handler) {
+            clearTimeout(handler);
+            dropHandler();
+            isRotate = false;
+            handler = null;
+            return ;
+        }
+
+        $('.drop-animation').addClass('js-animate');
+        $('.inner-container .banner .js-rotate').show().addClass('ring-animate');
+
+        setTimeout(function() {
+            $('.inner-container .banner .ring .js-rotate').css({
+                'transform': 'rotate(0deg)',
+                '-webkit-transform': 'rotate(0deg)'
+            });
+
+            // $('.inner-container .banner .ring').animate({
+            //     'display': 'block'
+            // }, 500);
+            $('.inner-container .banner .js-rotate').removeClass('ring-animate');
+            isRotate = false;
+        }, 1500);
+
+        handler = setTimeout(dropHandler, 12000);
+    }
+    function dropHandler() {
+        $('.drop-animation').removeClass('js-animate');
+    }
 
     var clientY_start;
     var clientY_end;
@@ -66,23 +84,7 @@
            console.log('上');
            if(!isRotate && distance < 100) {
                console.log('yep');
-               isRotate = true;
-               $('.inner-container .banner .ring').hide();
-               $('.drop-animation').addClass('js-animate');
-               $('.inner-container .banner .js-rotate').show().addClass('ring-animate');
-
-               setTimeout(function() {
-                   $('.inner-container .banner .ring .js-rotate').css({
-                       'transform': 'rotate(0deg)',
-                       '-webkit-transform': 'rotate(0deg)'
-                   });
-               }, 1000);
-               setTimeout(function() {
-                   $('.inner-container .banner .ring').show();
-                   $('.inner-container .banner .js-rotate').hide().removeClass('ring-animate');
-                   $('.drop-animation').removeClass('js-animate');
-                   isRotate = false;
-               }, 3000);
+               animateHandler();
            }
         } else if(clientY_start - minRange > clientY_end){
            isSlideDown = 'd';

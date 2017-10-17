@@ -207,6 +207,7 @@ console.log('1')
         var $left = $(elem).prev();
 
         if (!isAnim && index < length) {
+            $slide.find('.shining').hide();
             isAnim = true;
             isSlideLeft = 'a';
             $slide.animate({
@@ -215,7 +216,7 @@ console.log('1')
                 $active.removeClass('active');
                 $($img[index+1]).addClass('active');
                 $left.show();
-
+                $slide.find('.shining').show();
                 isAnim = false;
             });
             if (index == length -1) {
@@ -237,6 +238,7 @@ console.log('1')
         if (!isAnim && index > 0) {
             isAnim = true;
             isSlideLeft = 'a';
+            $slide.find('.shining').hide();
             $slide.animate({
                 'margin-left': (marginLeft + width) +'px'
             }, 'linear', function() {
@@ -246,6 +248,7 @@ console.log('1')
                 // if (index - 1 > 0) {
                 //     $(elem).show();
                 // }
+                $slide.find('.shining').show();
                 isAnim = false;
             });
             if (index == 1) {

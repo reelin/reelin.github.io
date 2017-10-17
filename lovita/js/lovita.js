@@ -5,7 +5,7 @@
 
     // });
     $(window).on('load', function() {
-        $('img').lazyload();
+        $('.pic-slide img').lazyload();
         $('.loading').animate({
             opacity: 0
         }, 1000, function() {

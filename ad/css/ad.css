@@ -1,0 +1,106 @@
+@font-face{
+    font-family: "FangH";
+    src: url('../font/font.ttf');
+}
+html, body {
+    background: #1d1f26;
+    background: url('../imgs/bg.png') repeat-y 0 0;
+    color: #fff799;
+    font-family: 'FangH', '-apple-system', Helvetica Neue, Helvetica, 'Microsoft YaHei',STHeiTi, sans-serif;
+    width: 100%;
+    font-weight: lighter;
+    height: 100%;
+    overflow: hidden;
+    background-size: 100%;
+}
+.container {
+    background: url('../imgs/bg.png') no-repeat 0 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+}
+.loading img {
+    width: 2.43rem;
+    display: block;
+    margin: auto;
+    margin-top: 60%;
+}
+.loading-line {
+    width: 2.47rem;
+    height: 5px;
+    background: #000;
+    border: 2px solid #313131;
+    margin: 30px auto;
+    position: relative;
+}
+.loading-line .line {
+    width: .47rem;
+    height: 5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #f4ce92;
+}
+.choice-wrapper h1 {
+    font-size: .35rem;
+    line-height: .38rem;
+    text-decoration: underline;
+    text-align: center;
+    margin-top: .56rem;
+    margin-bottom: .5rem;
+}
+.choice1 .video-wrapper {
+    width: 6.82rem;
+    background: url('../imgs/tv.png') no-repeat top center;
+    background-size: 100%;
+    margin: 0 auto;
+    height: 4.5rem;
+}
+.choice-wrapper .select-wrapper {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    height: 5rem;
+}
+.choice-wrapper .select-wrapper .select-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url('../imgs/select_bg.png') no-repeat top center;
+    background-size: 100%;
+    left: 0;
+    top: 0;
+}
+.choice-wrapper .select-wrapper ul {
+    width: 5.3rem;
+    margin: 0 auto;
+}
+.choice-wrapper .select-wrapper li {
+    font-size: .28rem;
+    line-height: .47rem;
+    text-align: center;
+    text-align-last: justify;
+    -moz-text-align-last: justify;
+}
+.choice-wrapper .select-wrapper li.active {
+    font-size: .35rem;
+    line-height: .6rem;
+}
+.choice-wrapper .btn {
+    display: block;
+    width: 1.81rem;
+    margin: .53rem auto auto auto;
+}
+.choice-wrapper .btn img {
+    width: 1.81rem;
+}
+.choice2 h1 {
+    margin-bottom: .98rem;
+}
+.choice2 .video-wrapper {
+    width: 7rem;
+    background: url('../imgs/phone.png') no-repeat top center;
+    background-size: 100%;
+    margin: 0 auto;
+    height: 4rem;
+}

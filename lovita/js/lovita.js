@@ -1,8 +1,7 @@
 (function($) {
 
     $(window).on('load', function() {
-        var video = $('.video-container video')[0];
-        video.controls = false;
+
         $('.video-container').height($('video').height());
 
         $('.lazyload').each(function() {

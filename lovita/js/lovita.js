@@ -3,7 +3,7 @@
     $(window).on('load', function() {
 
         $('.video-container').height($('video').height());
-
+        $('video')[0].play();
         $('.lazyload').each(function() {
             $(this).attr('src', $(this).attr('data-src'));
         });

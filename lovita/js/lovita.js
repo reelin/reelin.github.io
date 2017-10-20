@@ -1,6 +1,8 @@
 (function($) {
 
     $(window).on('load', function() {
+        $('.video-container').height($('video').height());
+
         $('.lazyload').each(function() {
             $(this).attr('src', $(this).attr('data-src'));
         });

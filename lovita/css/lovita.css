@@ -9,7 +9,7 @@ html, body {
 }
 video::-webkit-media-controls-enclosure {
     /*禁用播放器控制栏的样式*/
-    /*display: none !important;*/
+    display: none !important;
 }
 
 

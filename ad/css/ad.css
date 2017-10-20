@@ -70,6 +70,7 @@ html, body {
     background-size: 100%;
     left: 0;
     top: 0;
+    z-index:99;
 }
 .choice-wrapper .select-wrapper ul {
     width: 5.3rem;

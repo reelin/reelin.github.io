@@ -3,7 +3,11 @@
     $(window).on('load', function() {
 
         $('.video-container').height($('video').height());
-        $('video')[0].play();
+
+        //必须在微信Weixin JSAPI的WeixinJSBridgeReady才能生效
+document.addEventListener("WeixinJSBridgeReady", function () {
+    $('video')[0].play();
+}, false);
         $('.lazyload').each(function() {
             $(this).attr('src', $(this).attr('data-src'));
         });

@@ -7,7 +7,7 @@
         //必须在微信Weixin JSAPI的WeixinJSBridgeReady才能生效
 document.addEventListener("WeixinJSBridgeReady", function () {
     alert('1');
-    $('video')[0].play();
+    document.getElementById('video').play();
 }, false);
         $('.lazyload').each(function() {
             $(this).attr('src', $(this).attr('data-src'));

@@ -395,13 +395,19 @@ html, body {
 .thumb-block .pic-block .pic-wrapper .s2 {
     left: .3rem;
     top: 40px;
+    animation-delay: .5s;
+    -webkit-animation-delay: .5s;
 }
 .thumb-block .pic-block .pic-wrapper .s3 {
     left: 1.7rem;
+    animation-delay: 1s;
+    -webkit-animation-delay: 1s;
 }
 .thumb-block .pic-block .pic-wrapper .s4 {
     left: 1.3rem;
     top: 60px;
+    animation-delay: 1.4s;
+    -webkit-animation-delay: 1.4s;
 }
 .thumb-block .pic-block .pic-slide {
     display: inline-block;

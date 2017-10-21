@@ -328,15 +328,7 @@ video {
     margin-right: auto;
     display: block;
 }
-.thumb-block.block1 .text-block{
-    margin-bottom: 7.3rem;
-}
-.thumb-block.block3 .text-block{
-    margin-bottom: 6.6rem;
-}
-.thumb-block.block4 .text-block{
-    margin-bottom: 5.7rem;
-}
+
 .thumb-block.block1 .pic-block{
     margin-bottom: 5.9rem;
 }
@@ -362,8 +354,17 @@ video {
     margin-bottom: 1.6rem;
 }
 
+.thumb-block.block1 .text-block{
+    margin-bottom: 7.3rem;
+}
+.thumb-block.block3 .text-block{
+    margin-bottom: 6.6rem;
+}
+.thumb-block.block4 .text-block{
+    margin-bottom: 7.2rem;
+}
 .thumb-block.block5 .text-block{
-    margin-bottom: 7.1rem;
+    margin-bottom: 5.5rem;
 }
 .thumb-block.block6 .text-block{
     margin-bottom: 6rem;
@@ -372,7 +373,7 @@ video {
     margin-bottom: 5rem;
 }
 .thumb-block.block8 .text-block{
-    margin-bottom: 2.2rem;
+    margin-bottom: 3rem;
 }
 .thumb-block.block9 .text-block{
     margin-bottom: 0rem;

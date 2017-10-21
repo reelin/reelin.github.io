@@ -25,6 +25,7 @@ var ads2 = [
 	{text:'Never循规蹈矩ABSOLUT绝对伏特加有魔力，Cool night有绝对伏特加让胜利更有创意。',id:10, sour:'中国有嘻哈'}
 ];
 
+
 var $wrapper = $('.container.choice1');
 
 $(function(){
@@ -55,10 +56,13 @@ $(function(){
 				var url = './video/1/' + $(".choice1 .select-wrapper li.active").attr('data-id') + '.mp4';
 				myPlayer.src(url);
 				myPlayer.load();
+				$wrapper.find(".vjs-big-play-button").trigger("click");
+
 				myPlayer.play();
 				document.addEventListener("WeixinJSBridgeReady", function () {
 					myPlayer.play();
 					$wrapper.find(".vjs-big-play-button").trigger("click");
+
 				}, false);
 			});
 		}, 1000);
@@ -128,6 +132,8 @@ $(function(){
 			var url = './video/2/' + $wrapper.find(".select-wrapper li.active").attr('data-id') + '.mp4';
 			myPlayer2.src(url);
 			myPlayer2.load();
+			$wrapper.find(".vjs-big-play-button").trigger("click");
+		
 			myPlayer2.play();
 			document.addEventListener("WeixinJSBridgeReady", function () {
 				myPlayer2.play();

@@ -53,18 +53,23 @@ $(function(){
 	//end
 
 	var myPlayer = videojs('example_video_1');
-    videojs("example_video_1").ready(function(){
+    myPlayer.ready(function(){
         myPlayer.width(rem2px(3.95));
         myPlayer.height(rem2px(2.85));
         myPlayer.play();
+        $(".video-box").trigger("click");
     });
-    setTimeout(function(){changeVideo(1)},2000);
     function changeVideo(id){
     	console.log("changed")
     	myPlayer.src('./test/video2.mp4');
     	myPlayer.load();
     	myPlayer.play();
     }
+
+    $(".video-box").on("click",function(e){
+    	e.preventDefault();
+    	myPlayer.play();
+    })
 })
 var slideAds = function(direction){
 	if(direction){

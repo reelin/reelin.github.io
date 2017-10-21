@@ -58,7 +58,6 @@ $(function(){
         myPlayer.height(rem2px(2.85));
         myPlayer.play();
     });
-    setTimeout(function(){changeVideo(1)},2000);
     function changeVideo(id){
     	console.log("changed")
     	myPlayer.src('./test/video2.mp4');

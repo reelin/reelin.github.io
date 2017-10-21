@@ -12,17 +12,17 @@ var ads1 = [
 	{text:'不走寻常路，美特斯邦威。',id:9 ,time: 2003}
 ];
 var ads2 = [
-	{text:'掏出来搞事情的拍照黑科技小米手机。',id:0},
-	{text:'奶后吐真言。',id:1},
-	{text:'鸡年全家提桶鸡。',id:2},
-	{text:'别让你的头屑陪我过夜。',id:3 },
-	{text:'我X（去），这也能卖出去。',id:4},
-	{text:'玩的不够大，别喝美年达。',id:5 },
-	{text:'想的美不如拍得美的vivo手机。',id:6},
-	{text:'四海八荒说走就走，老司机带你上宇宙。',id:7},
-	{text:'hip-hop是你的维他命保持12分的清醒，农夫山泉维他命水马力全开优势占领。',id:8},
-	{text:'麦当劳那么大的小食Fun开闹不休息，那么那么大小食坚持进攻火力。',id:9 },
-	{text:'Never循规蹈矩ABSOLUT绝对伏特加有魔力，Cool night有绝对伏特加让胜利更有创意。',id:10}
+	{text:'掏出来搞事情的拍照黑科技小米手机。',id:0, sour:'奇葩说'},
+	{text:'奶后吐真言。',id:1, sour:'奇葩说'},
+	{text:'鸡年全家提桶鸡。',id:2, sour:'奇葩说'},
+	{text:'别让你的头屑陪我过夜。',id:3, sour:'奇葩说' },
+	{text:'我X（去），这也能卖出去。',id:4, sour:'奇葩说'},
+	{text:'玩的不够大，别喝美年达。',id:5 , sour:'奇葩说'},
+	{text:'想的美不如拍得美的vivo手机。',id:6, sour:'姐姐好饿'},
+	{text:'四海八荒说走就走，老司机带你上宇宙。',id:7, sour:'吃光全宇宙'},
+	{text:'hip-hop是你的维他命保持12分的清醒，农夫山泉维他命水马力全开优势占领。',id:8, sour:'中国有嘻哈'},
+	{text:'麦当劳那么大的小食Fun开闹不休息，那么那么大小食坚持进攻火力。',id:9 , sour:'中国有嘻哈'},
+	{text:'Never循规蹈矩ABSOLUT绝对伏特加有魔力，Cool night有绝对伏特加让胜利更有创意。',id:10, sour:'中国有嘻哈'}
 ];
 
 var $wrapper = $('.container.choice1');
@@ -150,6 +150,7 @@ $(function(){
 		$('.result .old .js-time span').text(time.substr(2));
 		$('.result .new .js-info').text($last.text());
 		$('.js-result-time .js-result').text(time);
+		$('.result span.js-pro').text($last.attr('data-sour'));
 		time = parseInt(time);
 		if (time <= 2003 ) {
 			r = result[0];
@@ -229,7 +230,8 @@ var render = function(arr){
 			var text_ = arr[j].text;
 			var id_ = arr[j].id;
 			var time_ = arr[j].time ? (' data-time=' + arr[j].time) : '';
-			var dom_ = '<li data-id='+id_+ time_ + '>'+text_+'</li>';
+			var sour_ = arr[j].sour ? (' data-sour=' + arr[j].sour) : '';
+			var dom_ = '<li data-id='+id_+ time_ + sour_ + '>'+text_+'</li>';
 			$wrapper.find(".select-wrapper ul").append(dom_);
 		}
 	}

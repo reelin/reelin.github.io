@@ -7,25 +7,28 @@
     <script src="libs/rem_r.js" type="text/javascript"></script>
     <link href="libs/reset.css" rel="stylesheet" type="text/css" />
     <link href="libs/video-js.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="http://static.1sight.cn/wechat/immediate/lib/swiper-3.3.1.min.css" rel="stylesheet" type="text/css" /> -->
     <link href="css/ad.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div class="container">
-        <!-- <div class="loading">
-            <img src="imgs/tv_loading.png" alt="">
-            <div class="loading-line">
-                <div class="line"></div>
-            </div>
-        </div> -->
-        <div class="choice-wrapper choice1">
+
+    <div class="container loading">
+        <img src="imgs/tv_loading.png" alt="">
+        <div class="loading-line">
+            <div class="line"></div>
+        </div>
+    </div>
+    <div class="container choice1">
+        <div class="choice-wrapper">
             <h1>选择你印象深刻的第一条广告</h1>
             <div class="video-wrapper">
                 <div class="video-box">
-                    <video id="example_video_1" class="video-js vjs-default-skin" preload="auto" width="100%" height="100%"
-                    poster="" webkit-playsinline="playsinline" x-webkit-airplay="true" playsinline="true" x5-video-player-type="h5"  x5-video-orientation="h5"
-                    data-setup="{}">
-                    <source src="test/video1.mp4" type='video/mp4' />
-                </video>
+                    <video id="video1"
+                    class="video-js vjs-default-skin"
+                     preload="auto" webkit-playsinline playsinline
+                     x5-playsinline
+                     type='video/mp4' >
+                    </video>
                 </div>
             </div>
             <div class="select-wrapper">
@@ -33,94 +36,53 @@
                 <div class="side-btn down-btn"></div>
                 <div class="select-bg"></div>
                 <ul>
-                    <li>维维豆奶,乐开怀。first</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维奶,欢乐开怀。</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维维豆奶,乐开怀。</li>
-                    <li>维维豆奶,欢乐开怀。middle</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维奶,欢乐开怀。</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维维豆奶,乐开怀。</li>
-                    <li>维维豆奶,乐开怀。last</li>
 
-                    <li>维维豆奶,乐开怀。first</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维奶,欢乐开怀。</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维维豆奶,乐开怀。</li>
-                    <li>维维豆奶,欢乐开怀。middle</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维奶,欢乐开怀。</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维维豆奶,乐开怀。</li>
-                    <li>维维豆奶,乐开怀。last</li>
-
-                     <li>维维豆奶,乐开怀。first</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维奶,欢乐开怀。</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维维豆奶,乐开怀。</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维奶,欢乐开怀。</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维维豆奶,乐开怀。</li>
-                    <li>维维豆奶,乐开怀。last</li>
                 </ul>
             </div>
             <a class="btn" href="javascript:;"><img src="imgs/btn.png" alt=""></a>
 
         </div>
-        <!-- <div class="choice-wrapper choice2" style="display: none;">
+    </div>
+    <div class="container choice2">
+        <div class="choice-wrapper">
             <h1>选择近期印象最深的魔性洗脑广告</h1>
             <div class="video-wrapper">
-
+                <div class="video-box">
+                    <video id="video2"
+                    class="video-js vjs-default-skin"
+                     preload="auto" webkit-playsinline playsinline
+                     x5-playsinline
+                     type='video/mp4' >
+                    </video>
+                </div>
             </div>
             <div class="select-wrapper">
+                <div class="side-btn up-btn"></div>
+                <div class="side-btn down-btn"></div>
                 <div class="select-bg"></div>
                 <ul>
-                    <li>维维豆奶,乐开怀。first</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维奶,欢乐开怀。</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维维豆奶,乐开怀。</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维奶,欢乐开怀。</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维维豆奶,乐开怀。</li>
-                    <li>维维豆奶,乐开怀。last</li>
 
-                    <li>维维豆奶,乐开怀。first</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维奶,欢乐开怀。</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维维豆奶,乐开怀。</li>
-                    <li class="active">维维豆奶,欢乐开怀。</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维奶,欢乐开怀。</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维维豆奶,乐开怀。</li>
-                    <li>维维豆奶,乐开怀。last</li>
-
-                    <li>维维豆奶,乐开怀。first</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维奶,欢乐开怀。</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维维豆奶,乐开怀。</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维奶,欢乐开怀。</li>
-                    <li>维维豆奶,欢乐开怀。</li>
-                    <li>维维豆奶,乐开怀。</li>
-                    <li>维维豆奶,乐开怀。last</li>
                 </ul>
             </div>
             <a class="btn" href="javascript:;"><img src="imgs/btn.png" alt=""></a>
 
-        </div> -->
+        </div>
+    </div>
+    <div class="container result">
+        <div class="old result-block">
+            <p class="shadow">你印象深刻的第一条广告</p>
+            <p class="js-info">用飘柔就是这么自信</p>
+            <p class="js-time"><span>87</span>年</p>
+        </div>
+        <div class="new result-block">
+            <p class="js-time">17年</p>
+            <p class="shadow">你最近记住的一条广告</p>
+            <p class="js-info">用飘柔就是这么自信</p>
+        </div>
+        <p class="js-result">系统推算你是80后／广告界的泥石流<br>单纯走心，记忆深处最动人。</p>
+        <p class="js-result-time">你选择的第一条广告出现在<span class="js-time">1987</span>年，印象最深的魔性广告来自《<span class="js-pro"></span>》</p>
+        <img class="qrcode" src="imgs/qrcode.png" alt="">
+        <p style="text-align:center;"><img src="imgs/font.png" alt="" width="100%"></p>
     </div>
 
 
@@ -128,7 +90,7 @@
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.transit.min.js"></script>
     <script type="text/javascript" src="js/video.min.js"></script>
-    <script type="text/javascript" src="js/ad.js"></script>
+    <script type="text/javascript" src="js/ad.js?v12"></script>
 
     <!-- <script type="text/javascript" src="http://static.1sight.cn/wechat/live/js/weixin_share_v1.js"></script> -->
 </body>

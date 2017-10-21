@@ -13,8 +13,17 @@ video {
 .lo-video {
     position: relative;
 }
+.lo-video .js-mute {
+    position: absolute;
+    right: .3rem;
+    bottom: .24rem;
+    width: .5rem;
+    z-index: 2;
+}
+.lo-video .muted {
+    display: none;
+}
 .video-bg {
-    background: #fff;
     position: absolute;
     left: 0;
     height: 0;

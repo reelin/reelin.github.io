@@ -3,19 +3,42 @@
     var myPlayer = videojs('video',{
 		"controls": false,
 	});
+    var play_status = 0;
+    var howLoudIsIt;
 
     myPlayer.ready(function(){
         var w = parseInt($('.inner-container').width());
         myPlayer.width(w);
 
         $('.video-bg').on('touchstart', function() {
-            $(this).hide();
             myPlayer.play();
+            play_status = 1;
         });
+        $('video').on('touchstart', function() {
+            myPlayer.pause();
+            play_status = 2;
+        });
+        $('.js-mute').on('touchstart', function() {
+            var $mute = $('.js-mute.mute');
+            var $muted = $('.js-mute.muted');
+            if (!$(this).hasClass('muted')){
+                $muted.show();
+                $mute.hide();
+                myPlayer.volume(0);
+            } else {
+                $mute.show();
+                $muted.hide();
+                myPlayer.volume(0.5);
+            }
+        })
    });
-   // jQuery('.inner-container').scroll(function(){
-   //     console.log(jQuery('.inner-container').scrollTop())
-   // });
+   myPlayer.on("play", function(){
+        $('.video-bg').hide();
+   });
+   myPlayer.on("pause", function(){
+        $('.video-bg').show();
+   });
+
 
     $(window).on('load', function() {
 
@@ -104,23 +127,24 @@
 
         if(clientY_start + minRange < clientY_end) {
            isSlideDown = 'u';
-        //    console.log('上');
-           if(!isRotate && distance < (h_video + 100)) {
-            //    console.log('yep');
-               animateHandler();
-               myPlayer.play();
+
+           if(!isRotate && (distance < (h_video + 100))) {
+               if (play_status == '0' || play_status == '1') {
+                   myPlayer.play();
+               }
            }
         } else if(clientY_start - minRange > clientY_end){
            isSlideDown = 'd';
-            myPlayer.pause();
-           if (isFirst) {
-               isFirst = false;
 
 
-               animateHandler();
+            if (play_status == '0' || play_status == '1') {
+                myPlayer.pause();
+            }
+            console.log(distance);
+            if (!isRotate && (distance >= h_video && distance < (h_video + 100))) {
+                animateHandler();
+            }
 
-           }
-        //    console.log('下');
         }
 
 

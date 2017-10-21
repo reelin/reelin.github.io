@@ -7,21 +7,20 @@
     myPlayer.ready(function(){
         var w = parseInt($('.inner-container').width());
         myPlayer.width(w);
-        // alert('sss');
-        // myPlayer.play();
+
         $('.video-bg').on('touchstart', function() {
             $(this).hide();
             myPlayer.play();
         });
    });
+   // jQuery('.inner-container').scroll(function(){
+   //     console.log(jQuery('.inner-container').scrollTop())
+   // });
 
     $(window).on('load', function() {
 
         $('.video-container').height($('video').height());
-        // myPlayer.play();
-        $('.video-bg').on('touchstart', function() {
-            myPlayer.play();
-        });
+
 
         $('.lazyload').each(function() {
             $(this).attr('src', $(this).attr('data-src'));
@@ -35,7 +34,7 @@
                 'overflow': 'auto'
             });
         });
-        setTimeout(animateHandler, 2000);
+        // setTimeout(animateHandler, 2000);
     });
 
     var handler = null;
@@ -89,6 +88,7 @@
     var isPic = false;
     var $picWrapper;
     var isRotate = false;
+    var h_video = parseInt($('video').height());
     $('.inner-container').on('touchstart', function(e) {
         clientY_start = e.touches[0].clientY;
         clientX_start = e.touches[0].clientX;
@@ -105,12 +105,21 @@
         if(clientY_start + minRange < clientY_end) {
            isSlideDown = 'u';
         //    console.log('上');
-           if(!isRotate && distance < 100) {
+           if(!isRotate && distance < (h_video + 100)) {
             //    console.log('yep');
                animateHandler();
+               myPlayer.play();
            }
         } else if(clientY_start - minRange > clientY_end){
            isSlideDown = 'd';
+            myPlayer.pause();
+           if (isFirst) {
+               isFirst = false;
+
+
+               animateHandler();
+
+           }
         //    console.log('下');
         }
 

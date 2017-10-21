@@ -465,7 +465,7 @@ video {
 }
 @keyframes twinkle {
   from {
-      opacity:1;
+      opacity:.5;
   }
   to {
       opacity:0.3;
@@ -473,7 +473,7 @@ video {
 }
 @-webkit-keyframes twinkle {
   from {
-      opacity:1;
+      opacity:.5;
   }
   to {
       opacity:0.3;

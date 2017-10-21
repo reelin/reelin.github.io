@@ -7,7 +7,7 @@
     myPlayer.ready(function(){
         var w = parseInt($('.inner-container').width());
         myPlayer.width(w);
-        alert('1');
+        alert('sss');
         myPlayer.play();
    });
 

@@ -57,6 +57,7 @@ $(function(){
         myPlayer.width(rem2px(3.95));
         myPlayer.height(rem2px(2.85));
         myPlayer.play();
+        $(".video-box").trigger("click");
     });
     function changeVideo(id){
     	console.log("changed")
@@ -64,6 +65,11 @@ $(function(){
     	myPlayer.load();
     	myPlayer.play();
     }
+
+    $(".video-box").on("click",function(e){
+    	e.preventDefault();
+    	myPlayer.play();
+    })
 })
 var slideAds = function(direction){
 	if(direction){

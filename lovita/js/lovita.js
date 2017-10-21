@@ -7,15 +7,21 @@
     myPlayer.ready(function(){
         var w = parseInt($('.inner-container').width());
         myPlayer.width(w);
-        alert('sss');
-        myPlayer.play();
+        // alert('sss');
+        // myPlayer.play();
+        $('.video-bg').on('touchstart', function() {
+            $(this).hide();
+            myPlayer.play();
+        });
    });
 
     $(window).on('load', function() {
 
         $('.video-container').height($('video').height());
-
-        //必须在微信Weixin JSAPI的WeixinJSBridgeReady才能生效
+        // myPlayer.play();
+        $('.video-bg').on('touchstart', function() {
+            myPlayer.play();
+        });
 
         $('.lazyload').each(function() {
             $(this).attr('src', $(this).attr('data-src'));

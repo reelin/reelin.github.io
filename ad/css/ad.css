@@ -49,18 +49,48 @@ html, body {
     margin-top: .56rem;
     margin-bottom: .5rem;
 }
+
 .choice1 .video-wrapper {
+    position: relative;
     width: 6.82rem;
     background: url('../imgs/tv.png') no-repeat top center;
     background-size: 100%;
     margin: 0 auto;
     height: 4.5rem;
 }
+.choice1 .video-wrapper .video-box{
+    overflow: hidden;
+    border-radius: 0.15rem;
+    position: absolute;
+    left:.8rem;
+    top:0.62rem;
+    width:3.95rem;
+    height:2.85rem;
+    background-color: #fff;
+}
 .choice-wrapper .select-wrapper {
     text-align: center;
     position: relative;
     overflow: hidden;
     height: 5rem;
+}
+.select-wrapper .side-btn{
+    display: inline-block;
+    width:0.25rem;
+    height:0.75rem;
+    position: absolute;
+    right:.7rem;
+    z-index:100;
+}
+.side-btn.up-btn{
+    top:1.4rem;
+    background:url(../imgs/up.png) no-repeat center;
+    background-size:contain;
+}
+.side-btn.down-btn{
+    bottom:1.3rem;
+    background:url(../imgs/down.png) no-repeat center;
+    background-size:contain;
 }
 .choice-wrapper .select-wrapper .select-bg {
     width: 100%;
@@ -82,10 +112,13 @@ html, body {
     text-align: center;
     text-align-last: justify;
     -moz-text-align-last: justify;
+    white-space: nowrap;
 }
 .choice-wrapper .select-wrapper li.active {
-    font-size: .35rem;
+    font-size: .33rem;
     line-height: .6rem;
+    /*transform:scale(1.1);
+    -webkit-transform:scale(1.1);*/
 }
 .choice-wrapper .btn {
     display: block;

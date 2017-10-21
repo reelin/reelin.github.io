@@ -18,7 +18,7 @@
             myPlayer.pause();
             play_status = '2';
         });
-        $('.js-mute').on('touchstart', function() {
+        $('.mute-wrapper').on('touchstart', function() {
             var $mute = $('.js-mute.mute');
             var $muted = $('.js-mute.muted');
             if (!$(this).hasClass('muted')){
@@ -26,10 +26,12 @@
                 $mute.hide();
                 // myPlayer.volume(0.5);
                 $('video')[0].muted = true;
+                $(this).addClass('muted');
             } else {
                 $mute.show();
                 $muted.hide();
                 $('video')[0].muted = false;
+                $(this).removeClass('muted');
             }
         })
    });

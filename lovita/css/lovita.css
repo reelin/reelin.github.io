@@ -14,14 +14,17 @@ video {
 .lo-video {
     position: relative;
 }
-.lo-video .js-mute {
+.lo-video .mute-wrapper {
     position: absolute;
     right: .3rem;
     bottom: .24rem;
-    width: .5rem;
     z-index: 2;
+    padding: .5rem 0 0 .5rem;
 }
-.lo-video .muted {
+.lo-video .js-mute {
+    width: .5rem;
+}
+.lo-video .js-mute.muted {
     display: none;
 }
 .video-bg {

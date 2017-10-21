@@ -1,14 +1,14 @@
 (function($) {
 
-    var myPlayer = videojs('video',{
-		"controls": false,
-	});
+    var myPlayer = videojs('video');
 
     myPlayer.ready(function(){
         var w = parseInt($('.inner-container').width());
         myPlayer.width(w);
         // alert('sss');
-        // myPlayer.play();
+        $('.video-bg').hide();
+        myPlayer.play();
+
         $('.video-bg').on('touchstart', function() {
             $(this).hide();
             myPlayer.play();

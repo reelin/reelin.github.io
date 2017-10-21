@@ -52,11 +52,8 @@ $(function(){
 	})
 	//end
 
-	var myPlayer = videojs('example_video_1',{
-		"controls": false,
-	});
+	var myPlayer = videojs('example_video_1');
     videojs("example_video_1").ready(function(){
-        var myPlayer = this;
         myPlayer.width(rem2px(3.95));
         myPlayer.height(rem2px(2.85));
         myPlayer.play();

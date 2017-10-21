@@ -24,11 +24,12 @@
             if (!$(this).hasClass('muted')){
                 $muted.show();
                 $mute.hide();
-                myPlayer.volume(0);
+                // myPlayer.volume(0.5);
+                $('video')[0].muted = true;
             } else {
                 $mute.show();
                 $muted.hide();
-                myPlayer.volume(0.5);
+                $('video')[0].muted = false;
             }
         })
    });

@@ -1,14 +1,21 @@
 (function($) {
 
+    var myPlayer = videojs('video',{
+		"controls": false,
+	});
+
+    myPlayer.ready(function(){
+        var w = parseInt($('.inner-container').width());
+        myPlayer.width(w);
+        myPlayer.play();
+   });
+
     $(window).on('load', function() {
 
         $('.video-container').height($('video').height());
 
         //必须在微信Weixin JSAPI的WeixinJSBridgeReady才能生效
-document.addEventListener("WeixinJSBridgeReady", function () {
-    alert('1');
-    document.getElementById('video').play();
-}, false);
+
         $('.lazyload').each(function() {
             $(this).attr('src', $(this).attr('data-src'));
         });

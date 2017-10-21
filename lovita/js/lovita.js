@@ -3,7 +3,7 @@
     var myPlayer = videojs('video',{
 		"controls": false,
 	});
-    var play_status = 0;
+    var play_status = '0';
     var howLoudIsIt;
 
     myPlayer.ready(function(){
@@ -12,11 +12,11 @@
 
         $('.video-bg').on('touchstart', function() {
             myPlayer.play();
-            play_status = 1;
+            play_status = '1';
         });
         $('video').on('touchstart', function() {
             myPlayer.pause();
-            play_status = 2;
+            play_status = '2';
         });
         $('.js-mute').on('touchstart', function() {
             var $mute = $('.js-mute.mute');
@@ -129,7 +129,7 @@
            isSlideDown = 'u';
 
            if(!isRotate && (distance < (h_video + 100))) {
-               if (play_status == '0' || play_status == '1') {
+               if (play_status == '1') {
                    myPlayer.play();
                }
            }
@@ -137,7 +137,7 @@
            isSlideDown = 'd';
 
 
-            if (play_status == '0' || play_status == '1') {
+            if (play_status == '1') {
                 myPlayer.pause();
             }
             console.log(distance);

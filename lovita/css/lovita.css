@@ -210,11 +210,9 @@ video {
     width: .52rem;
     height: .28rem;
     display: block;
-    margin: .5rem auto 0 auto;
+    margin: .2rem auto 0 auto;
 }
-.inner-container .banner .icon-arrow {
-    background: url('../imgs/arrow_bottom.png') no-repeat 0 0;
-    background-size: 100%;
+.inner-container .banner .icon img {
     width: .52rem;
     height: .28rem;
     margin: 0;

@@ -49,7 +49,7 @@ html, body {
     -webkit-text-shadow: 2px 2px 2px #000;
 }
 .result img.qrcode {
-    width: 2.52rem;
+    width: 2.2rem;
     margin: .66rem auto;
     display: block;
 }
@@ -134,6 +134,17 @@ p.shadow {
     height:2.85rem;
     background-color: #fff;
 }
+.video-wrapper .video-box .video-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.video-wrapper .video-box .video-bg img{
+    width: 1rem;
+    margin: 1rem auto 0 auto;
+    display: block;
+}
 .choice2 .video-wrapper .video-box {
     overflow: hidden;
     position: absolute;
@@ -147,7 +158,7 @@ p.shadow {
     text-align: center;
     position: relative;
     overflow: hidden;
-    height: 5rem;
+    height: 4.23rem;
 }
 .select-wrapper .side-btn{
     display: inline-block;
@@ -171,7 +182,7 @@ p.shadow {
     width: 100%;
     height: 100%;
     position: absolute;
-    background: url('../imgs/select_bg.png') no-repeat top center;
+    background: url('../imgs/select_bg.png') no-repeat center center;
     background-size: 100%;
     left: 0;
     top: 0;
@@ -192,7 +203,6 @@ p.shadow {
 }
 .choice-wrapper .select-wrapper li.active {
     font-size: .33rem;
-    line-height: .6rem;
     -webkit-text-shadow: 2px 2px 2px #000;
     /*transform:scale(1.1);
     -webkit-transform:scale(1.1);*/

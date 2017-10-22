@@ -25,16 +25,16 @@ var ads2 = [
 	{text:'Never循规蹈矩ABSOLUT绝对伏特加有魔力，Cool night有绝对伏特加让胜利更有创意。',id:10, sour:'中国有嘻哈'}
 ];
 
-
 var $wrapper = $('.container.choice1');
+var type = '1';
+var ua = navigator.userAgent;
 
 $(function(){
 
-	var type = '1';
 	var line = 0;
 	var hanlder = setInterval(function() {
 		line = line + 1;
-		if (line < 100) {
+		if (line < 90) {
 			$('.loading-line .line').width(line + '%');
 		}
 	}, 100);
@@ -50,37 +50,54 @@ $(function(){
 			clearInterval(hanlder);
 			$('.loading-line .line').width('100%');
 			$('.loading').hide();
+
+			var id = $(".choice1 .select-wrapper li.active").attr('data-id');
+			var url = './video/1/' + id + '.mp4';
+
+			myPlayer.poster('./imgs/1/' + id + '.png');
+
 			myPlayer.ready(function(){
 				myPlayer.width(rem2px(3.95));
 				myPlayer.height(rem2px(2.85));
-				var url = './video/1/' + $(".choice1 .select-wrapper li.active").attr('data-id') + '.mp4';
+
 				myPlayer.src(url);
 				myPlayer.load();
-				$wrapper.find(".vjs-big-play-button").trigger("click");
-
 				myPlayer.play();
-				document.addEventListener("WeixinJSBridgeReady", function () {
-					myPlayer.play();
-					$wrapper.find(".vjs-big-play-button").trigger("click");
 
-				}, false);
+
 			});
+
 		}, 1000);
+
 		myPlayer = videojs('video1',{
-			'controls':false
+			'controls':false,
+			'posterImage': true
 		});
 		myPlayer2 = videojs('video2',{
-			'controls':false
+			'controls':false,
+			'posterImage': true
 		});
-
-
 	});
 
+	$(".video-bg").on("click",function(e){
+    	e.preventDefault();
+    	e.stopPropagation();
+		$(this).hide();
+		if (type == '1') {
+			myPlayer.play();
+		} else {
+			myPlayer2.play();
+		}
+
+    });
+
+	// 初始选择器位置
 	function initSelect(ads) {
 		trans = rem2px(0.47);
-		initTrans = 10*trans-rem2px(0.05);
+		initTrans = 11*trans-rem2px(0.2);
 		ads = randomilize(ads);
 		render(ads);
+
 		$wrapper.find(".select-wrapper ul").css({y:-initTrans});
 		$wrapper.find(".select-wrapper ul").children("li").eq(15).addClass("active");
 
@@ -126,19 +143,18 @@ $(function(){
 		$wrapper = $('.choice2');
 		type = '2';
 		initSelect(ads2);
+		var id =  $wrapper.find(".select-wrapper li.active").attr('data-id');
+		var url = './video/2/' + id + '.mp4';
+
+		myPlayer2.poster('./imgs/2/' + id + '.png');
 		myPlayer2.ready(function(){
 			myPlayer2.width(rem2px(4.85));
 			myPlayer2.height(rem2px(2.65));
-			var url = './video/2/' + $wrapper.find(".select-wrapper li.active").attr('data-id') + '.mp4';
+
 			myPlayer2.src(url);
 			myPlayer2.load();
-			$wrapper.find(".vjs-big-play-button").trigger("click");
-		
 			myPlayer2.play();
-			document.addEventListener("WeixinJSBridgeReady", function () {
-				myPlayer2.play();
-				$wrapper.find(".vjs-big-play-button").trigger("click");
-			}, false);
+
 		});
 	});
 	var result = ['系统推算你是80后／广告界的泥石流<br>单纯走心，记忆深处最动人。',
@@ -181,23 +197,22 @@ $(function(){
 		var url = './video/' + type + '/' + id + '.mp4';
 		var player = type == '1' ? myPlayer : myPlayer2;
 		if (type == '1') {
+
+			myPlayer.poster('./imgs/1/' + id + '.png');
 			myPlayer.src(url);
 			myPlayer.load();
 			myPlayer.play();
 		} else {
+
+			myPlayer2.poster('./imgs/2/' + id + '.png');
 			myPlayer2.src(url);
 			myPlayer2.load();
 			myPlayer2.play();
 		}
+
     }
 
-    // $("#video").on("click",function(e){
-    // 	e.preventDefault();
-    // 	e.stopPropagation();
-    // 	alert("!");
-    // 	myPlayer.play();
-    // })
-    //$("#video").trigger("click");
+
 	var slideAds = function(direction){
 		if(direction){
 			//上滑
@@ -222,11 +237,12 @@ var videoPlay = function(){
 }
 
 var init =function (){
-	if(Math.abs(step) == 11){
+	var len = type == '1' ? ads1.length : ads2.length;
+	if(Math.abs(step) == len) {
 		console.log("归位")
 		step = 0;
 		$wrapper.find(".select-wrapper ul").transition({y:-initTrans},0);
-		$wrapper.find(".select-wrapper ul").children("li").eq(16).addClass("active");
+		$wrapper.find(".select-wrapper ul").children("li").eq(15).addClass("active");
 	}
 }
 var render = function(arr){

@@ -319,6 +319,7 @@ video {
 }
 .thumb-block a.btn {
     width: 1.84rem;
+    display: inline-block;
 }
 .thumb-icon {
     display: block;
@@ -379,10 +380,27 @@ video {
 .thumb-block.block8 .text-block{
     margin-bottom: 3rem;
 }
-.thumb-block.block9 .text-block{
+.thumb-block.block9 {
     margin-bottom: 0rem;
     padding-bottom: 4.23rem;
+    text-align: center;
 
+}
+.thumb-block.block9 img {
+    width: 5.6rem;
+    margin-bottom: .3rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.thumb-block.block9 a.btn {
+    display: inline-block;
+    font-size: .25rem;
+    color: #e99289;
+    height: .58rem;
+    line-height: .58rem;
+    border: 1px solid #e99289;
+    border-radius: 3px;
 }
 .thumb-block .pic-block {
     display: none;

@@ -44,8 +44,14 @@
 
 
 
-    $(window).on('load', function() {
+   $(window).on('load', function() {
         // alert(1);
+        var img = new Image('./imgs/background_n.png');
+        var w = parseInt($('.inner-container').width());
+        img.src = './imgs/background_n.png';
+        img.onload = function() {
+            $('.inner-container').height(img.height / (img.width * w));
+        };
         $('.video-container').height($('video').height());
 
 
@@ -120,29 +126,6 @@
     var h_video = parseInt($('video').height());
 
     var re_slide_down = false;
-    //
-    // $(document).scroll(function() {
-    //
-    //     var top = $(document).scrollTop();
-    //     console.log(top+' '+h_video);
-    //     console.log(isSlideDown)
-    //     if (isSlideDown == 'u' && top <= h_video) {
-    //         console.log('暂停');
-    //
-    //         if (play_status == '1') {
-    //            myPlayer.play();
-    //         }
-    //     }else if (isSlideDown == 'd') {
-    //         if (play_status == '1') {
-    //             myPlayer.pause();
-    //         }
-    //
-    //         if (re_slide_down && (top >= (h_video + 10) && top < (h_video - 10)) {
-    //             console.log('动画');
-    //             animateHandler();
-    //         }
-    //     }
-    // });
 
     $('.inner-container').on('touchstart', function(e) {
         clientY_start = e.touches[0].clientY;
@@ -173,7 +156,7 @@
             if (play_status == '1') {
                 myPlayer.pause();
             }
-            console.log(distance);
+
             if (!isRotate && (distance >= h_video && distance < (h_video + 100))) {
                 animateHandler();
             }

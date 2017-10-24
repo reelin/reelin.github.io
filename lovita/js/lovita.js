@@ -45,7 +45,7 @@
 
 
     $(window).on('load', function() {
-
+        alert(1);
         $('.video-container').height($('video').height());
 
 
@@ -186,6 +186,7 @@
 
 
     $('.thumb-block').on('touchstart',function(e){
+        alert('2');
         var touch_ = e.originalEvent;
 		clientX_start = touch_.changedTouches[0].pageX;
 

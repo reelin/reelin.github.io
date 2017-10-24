@@ -193,19 +193,19 @@
     });
     $('.thumb-block').on('touchmove',function(e) {
         clientX_end = e.changedTouches[0].clientX;
-        if (clientX_start + minLRange < clientX_end) {
+        if (clientX_start + 10 < clientX_end) {
             isSlideLeft = 'r';
-        } else if (clientX_start - minLRange > clientX_end) {
+        } else if (clientX_start - 10 > clientX_end) {
             isSlideLeft = 'l';
         }
 
     });
     $('.thumb-block').on('touchend',function(e) {
         if (isSlideLeft == 'l') {
-            alert('2');
+            // alert('2');
             slideRight($(this).find('a.right'));
         } else if(isSlideLeft == 'r') {
-            alert('2');
+            // alert('2');
             slideLeft($(this).find('a.left'));
         }
     });

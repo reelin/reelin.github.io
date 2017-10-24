@@ -186,7 +186,7 @@
 
 
     $('.thumb-block').on('touchstart',function(e){
-        alert('2');
+
         var touch_ = e.originalEvent;
 		clientX_start = touch_.changedTouches[0].pageX;
 
@@ -202,8 +202,10 @@
     });
     $('.thumb-block').on('touchend',function(e) {
         if (isSlideLeft == 'l') {
+            alert('2');
             slideRight($(this).find('a.right'));
         } else if(isSlideLeft == 'r') {
+            alert('2');
             slideLeft($(this).find('a.left'));
         }
     });

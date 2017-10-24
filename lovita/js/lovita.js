@@ -45,7 +45,7 @@
 
 
     $(window).on('load', function() {
-        alert(1);
+        // alert(1);
         $('.video-container').height($('video').height());
 
 

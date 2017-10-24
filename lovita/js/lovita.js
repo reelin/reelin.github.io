@@ -1,7 +1,7 @@
 (function($) {
 
     var myPlayer = videojs('video',{
-		"controls": false,
+		"controls": false
 	});
     var play_status = '0';
     var howLoudIsIt;
@@ -41,6 +41,7 @@
    myPlayer.on("pause", function(){
         $('.video-bg').show();
    });
+
 
 
     $(window).on('load', function() {
@@ -100,6 +101,8 @@
         $('.drop-animation').removeClass('js-animate');
     }
 
+
+
     var clientY_start;
     var clientY_end;
     var clientX_start;
@@ -115,6 +118,32 @@
     var $picWrapper;
     var isRotate = false;
     var h_video = parseInt($('video').height());
+
+    var re_slide_down = false;
+    //
+    // $(document).scroll(function() {
+    //
+    //     var top = $(document).scrollTop();
+    //     console.log(top+' '+h_video);
+    //     console.log(isSlideDown)
+    //     if (isSlideDown == 'u' && top <= h_video) {
+    //         console.log('暂停');
+    //
+    //         if (play_status == '1') {
+    //            myPlayer.play();
+    //         }
+    //     }else if (isSlideDown == 'd') {
+    //         if (play_status == '1') {
+    //             myPlayer.pause();
+    //         }
+    //
+    //         if (re_slide_down && (top >= (h_video + 10) && top < (h_video - 10)) {
+    //             console.log('动画');
+    //             animateHandler();
+    //         }
+    //     }
+    // });
+
     $('.inner-container').on('touchstart', function(e) {
         clientY_start = e.touches[0].clientY;
         clientX_start = e.touches[0].clientX;
@@ -122,6 +151,7 @@
         // console.log('s: ' + pageY_start);
     });
     $('.inner-container').on('touchmove', function(e) {
+
         clientY_end = e.changedTouches[0].clientY;
         clientX_end = e.changedTouches[0].clientX;
         //判断移动的方向
@@ -153,67 +183,12 @@
 
     });
 
-    $('.inner-container').on('touchend', function(e) {
-        // if(isSlideDown == 'u' && distance < 300) {
-        //     console.log('yep');
-        //     $('.inner-container .banner .ring').hide();
-        //     $('.drop-animation').addClass('js-animate');
-        //     $('.inner-container .banner .js-rotate').show().addClass('ring-animate');
-        //
-        //     setTimeout(function() {
-        //         $('.inner-container .banner .ring .js-rotate').css({
-        //             'transform': 'rotate(0deg)',
-        //             '-webkit-transform': 'rotate(0deg)'
-        //         });
-        //     }, 1000);
-        //     setTimeout(function() {
-        //         $('.inner-container .banner .ring').show();
-        //         $('.inner-container .banner .js-rotate').hide().removeClass('ring-animate');
-        //         $('.drop-animation').removeClass('js-animate');
-        //     }, 3000);
-        // }
-    });
-    // var y = 0;
-    // $('.inner-container').on('touchend', function(e) {
-    //     // e.preventDefault();
-    //
-    //     // distance = e.touches[0].pageY - pageY_start;
-    //     console.log('dis: ' + distance);
-    //     y = y + distance;
-    //     // if (isSlideDown) {
-    //     //     $('.drop-animation.drop1').animate({
-    //     //         '-webkit-transform': 'translateY('+ y + 'px)',
-    //     //         'transform': 'translateY('+ y + 'px)',
-    //     //         'opacity': '1'
-    //     //     }, 1000);
-    //     //     setTimeout(function() {
-    //     //         $('.drop-animation.drop2').animate({
-    //     //             '-webkit-transform': 'translateY('+ y + 'px)',
-    //     //             'transform': 'translateY('+ y + 'px)',
-    //     //             'opacity': '1'
-    //     //         }, 1000);
-    //     //     }, 500);
-    //     //
-    //     // }
-    //     if (isSlideDown && isFirst) {
-    //
-    //         isFirst = false;
-    //         // $('.inner-container .banner .ring').hide();
-    //         // $('.drop-animation').addClass('js-animate');
-    //         // $('.inner-container .banner .js-rotate').show().addClass('ring-animate');
-    //         // setTimeout(function() {
-    //         //     $('.inner-container .banner .ring').show();
-    //         //     $('.inner-container .banner .js-rotate').hide().removeClass('ring-animate');
-    //         // }, 5000);
-    //     }
-    //     // 右滑
-    //     if (isPic && !isSlideLeft) {
-    //         slideRight($picWrapper.find('a.right'));
-    //     }
-    // });
-    $('.thumb-block').on('touchstart',function(e){
 
-        clientX_start = e.touches[0].clientX;
+
+    $('.thumb-block').on('touchstart',function(e){
+        var touch_ = e.originalEvent;
+		clientX_start = touch_.changedTouches[0].pageX;
+
     });
     $('.thumb-block').on('touchmove',function(e) {
         clientX_end = e.changedTouches[0].clientX;
@@ -231,6 +206,29 @@
             slideLeft($(this).find('a.left'));
         }
     });
+
+    //滑动手势监听
+	$('.select-wrapper').on('touchstart',function(e) {
+		e.preventDefault();
+		var touch_ = e.originalEvent;
+		startY = touch_.changedTouches[0].pageY;
+		endY = touch_.changedTouches[0].pageY;
+	})
+	$('.select-wrapper').on('touchmove',function(e) {
+		e.preventDefault();
+		var touch = e.originalEvent;
+		endY = touch.changedTouches[0].pageY;
+	})
+	$('.select-wrapper').on('touchend',function(e) {
+		e.preventDefault();
+		if (endY - startY > 10) {
+			console.log("下划");
+			slideAds(true);
+		} else if (endY - startY < -10) {
+			console.log("上划");
+			slideAds(false);
+		};
+	})
 
     $('.thumb-block .text-block a.js-pic').on('touchstart', function(e) {
         e.preventDefault();
@@ -252,7 +250,7 @@
         var $slide = $(elem).parent().find('.pic-wrapper');
         var $img = $slide.find('.pic-slide img');
         var $active = $slide.find('.pic-slide img.active');
-        var width = $(elem).parent().find('.slide-wrapper').width();
+        var width = parseInt($(elem).parent().find('.slide-wrapper').width());
         var length = $img.length - 1;
         var index = $img.index($active);
         var marginLeft = parseInt($slide.css('margin-left'));
@@ -262,9 +260,7 @@
             $slide.find('.shining').hide();
             isAnim = true;
             isSlideLeft = 'a';
-            $slide.animate({
-                'margin-left': (marginLeft - width) +'px'
-            }, 'linear', function() {
+            $slide.transition({ x:'-='+width}, 'linear', function() {
                 $active.removeClass('active');
                 $($img[index+1]).addClass('active');
                 $left.show();
@@ -283,7 +279,7 @@
         var $slide = $(elem).parent().find('.pic-wrapper');
         var $img = $slide.find('.pic-slide img');
         var $active = $slide.find('.pic-slide img.active');
-        var width = $(elem).parent().find('.slide-wrapper').width();
+        var width = parseInt($(elem).parent().find('.slide-wrapper').width());
         var index = $img.index($active);
         var marginLeft = parseInt($slide.css('margin-left'));
         var $right = $(elem).next();
@@ -291,9 +287,7 @@
             isAnim = true;
             isSlideLeft = 'a';
             $slide.find('.shining').hide();
-            $slide.animate({
-                'margin-left': (marginLeft + width) +'px'
-            }, 'linear', function() {
+            $slide.transition({ x:'+='+width}, 'linear', function() {
                 $active.removeClass('active');
                 $($img[index-1]).addClass('active');
                 $right.show();
@@ -312,4 +306,4 @@
             // $right.show();
         }
     }
-})(Zepto);
+})(jQuery);

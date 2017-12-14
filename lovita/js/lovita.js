@@ -10,13 +10,14 @@
         var w = parseInt($('.inner-container').width());
         myPlayer.width(w);
 
-        $('.vjs-big-play-button').click();
+        $('.video-bg').touchstart();
 
         $('.video-bg').on('touchstart', function() {
             myPlayer.play();
             play_status = '1';
+            alert('yep');
         });
-        
+
         $('video').on('touchstart', function() {
             myPlayer.pause();
             play_status = '2';

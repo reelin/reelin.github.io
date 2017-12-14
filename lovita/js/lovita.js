@@ -6,12 +6,6 @@
     var play_status = '0';
     var howLoudIsIt;
 
-    $('.vjs-big-play-button').on('click', function() {
-        myPlayer.play();
-        $('video')[0].play();
-        play_status = '1';
-        alert('yep');
-    });
     myPlayer.ready(function(){
         var w = parseInt($('.inner-container').width());
         myPlayer.width(w);
@@ -42,7 +36,12 @@
                 $('video')[0].muted = false;
                 $(this).removeClass('muted');
             }
-        })
+        });
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            myPlayer.play();
+            alert('000');
+        }, false);
+
    });
    myPlayer.on("play", function(){
         $('.video-bg').hide();

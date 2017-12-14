@@ -1,0 +1,205 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>百部大剧巨巨巨巨……巨长，都在爱奇艺</title>
+  <meta name="Description" content="翻到底可能要很久很久很久">
+  <meta name="sharecontent" data-msg-img="" data-msg-title="百部大剧巨巨巨巨……巨长，都在爱奇艺" data-msg-content="翻到底可能要很久很久很久" data-msg-callBack="" data-line-img="你的缩略图地址" data-line-title="你的标题" data-line-callBack=""/>
+  <link rel="stylesheet" href="http://aiqiyi100.yduob.com/src/reset.css">
+  <link href="http://aiqiyi100.yduob.com/src/video-js.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://aiqiyi100.yduob.com/src/animate.css">
+  <link rel="stylesheet" href="http://aiqiyi100.yduob.com/src/index.css">
+  <script src="http://ossweb-img.qq.com/images/js/zepto/zepto1.2.min.js"></script>
+  <script src="http://aiqiyi100.yduob.com/src/video.min.js"></script>
+  <script src="http://aiqiyi100.yduob.com/src/flexible.js"></script>
+  <style type="text/css">
+    #vjs {
+      /*position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 8;*/
+      /*display: none*/
+    }
+    #my-video {
+      margin-top: -1000px;
+    }
+    .logo { position: fixed; top: .35rem; right: .35rem; color: #fff; }
+    .logo span { display: inline-block; width: 8.25rem; height: 2.725rem; background: url('img/logo.png') 0 0 no-repeat; }
+    .logo img {
+      width: 2rem;
+    }
+    .full_loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #000;
+    }
+    .loading{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -40px;
+      margin-right: -20px;
+      width: 80px;
+      height: 40px;
+      z-index: 999;
+  }
+  .loading span{
+      display: inline-block;
+      width: 8px;
+      height: 100%;
+      border-radius: 4px;
+      background: lightgreen;
+      -webkit-animation: load 1s ease infinite;
+  }
+  @-webkit-keyframes load{
+      0%,100%{
+          height: 40px;
+          background: lightgreen;
+      }
+      50%{
+          height: 70px;
+          margin: -15px 0;
+          background: lightblue;
+      }
+  }
+  .loading span:nth-child(2){
+      -webkit-animation-delay:0.2s;
+  }
+  .loading span:nth-child(3){
+      -webkit-animation-delay:0.4s;
+  }
+  .loading span:nth-child(4){
+      -webkit-animation-delay:0.6s;
+  }
+  .loading span:nth-child(5){
+      -webkit-animation-delay:0.8s;
+  }
+
+  </style>
+  <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?173d7d9207f9466e77009de58b6e16c2";
+	  var s = document.getElementsByTagName("script")[0];
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+
+</head>
+
+<body>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+
+  <div id="box">
+    <div class="logo"><img src="img/logo.png"></div>
+    <div id="vjs">
+     <video id="my-video" class="video-js vjs-big-play-centered vjs-default-skin" height="320" autoplay>
+      <source src="http://aiqiyi100.yduob.com/aiqiyi_1.mp4" type="video/mp4">
+     </video>
+    </div>
+
+  </div>
+  <script src="http://aiqiyi100.yduob.com/src/echo.min.js"></script>
+  <script>
+    $('#share').click(function(){
+      $('.fixed').show()
+    })
+    $('.fixed').click(function(){
+      $('.fixed').hide()
+    })
+
+    window.onload = function () {
+      $('.full_loading').hide()
+      $('#vjs').show(200)
+      $('#my-video').css({width: $(window).width(), height: $(window).height(), marginTop: 0})
+      var myPlayer = videojs('my-video',{
+        "controls": false
+       });
+       document.addEventListener("WeixinJSBridgeReady", function () {
+        alert('自动播放');
+        myPlayer.play();
+      }, false);
+       myPlayer.ready(function(){
+        myPlayer.play();
+        // myPlayer.on('timeupdate', function () {
+        //   duration = myPlayer.duration()
+        //   currentTime = myPlayer.currentTime();
+        //   if (currentTime > 0) {
+        //     $('.loading').hide(400);
+        //     $('.skip').show(400);
+        //   }
+        //   // 如果 currentTime() === duration()，则视频已播放完毕
+        //   if (duration != 0 && currentTime === duration) {
+        //     // 播放结束
+        //     $('#my-video').hide(200).remove()
+        //     $('#vjs').hide(200)
+        //   }
+        // });
+      });
+
+
+      // var myPlayer = videojs('my-video');
+      // $('#my-video').css({width: $(window).width()})
+      // videojs("my-video").ready(function(){
+      //   var myPlayer = this;
+      //   myPlayer.play();
+      // });
+    }
+    // setTimeout(function () {
+    //   $('.full_loading').hide()
+    //   $('#vjs').show(200)
+    //   var myPlayer = videojs('my-video');
+    //   $('#my-video').css({width: $(window).width(), height: $(window).height()})
+    //   videojs("my-video").ready(function(){
+    //     var myPlayer = this;
+    //     myPlayer.play();
+    //     if (myPlayer.duration() != 0 && myPlayer.currentTime() === myPlayer.duration()) {
+    //       // 播放结束
+    //       $('#my-video').hide(200).remove()
+    //       $('#vjs').hide(200)
+    //     }
+    //   });
+      // var myPlayer = videojs('my-video',{
+      //   "controls": false
+      //  });
+      //  document.addEventListener("WeixinJSBridgeReady", function () {
+      //   alert(1)
+      //   myPlayer.play();
+      // }, false);
+      // myPlayer.ready(function(){
+      //   alert(12)
+      //   myPlayer.play();
+      //   myPlayer.on('timeupdate', function () {
+      //     duration = myPlayer.duration()
+      //     currentTime = myPlayer.currentTime();
+      //     if (currentTime > 0) {
+      //       $('.loading').hide(400);
+      //       $('.skip').show(400);
+      //     }
+      //     // 如果 currentTime() === duration()，则视频已播放完毕
+      //     if (duration != 0 && currentTime === duration) {
+      //       // 播放结束
+      //       $('#my-video').hide(200).remove()
+      //       $('#vjs').hide(200)
+      //     }
+      //   });
+      // });
+
+    // }, 2000)
+
+  </script>
+
+
+
+</body>
+
+</html>

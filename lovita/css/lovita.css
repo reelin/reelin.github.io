@@ -420,7 +420,9 @@ video {
     width: 4rem;
 }
 .thumb-block .pic-block .left img, .thumb-block .pic-block .right img {
-    width: .23rem;
+    width: .35rem;
+    animation: twinkle 1s infinite;
+    -webkit-animation: twinkle 1s infinite;
 }
 .thumb-block .pic-block .left{
     left: 0;
@@ -437,29 +439,30 @@ video {
     width: 100000px;
     overflow: hidden;
 }
-.thumb-block .pic-block .pic-wrapper .shining {
+.thumb-block .pic-block .slide-wrapper .shining {
     position: absolute;
     display: block;
     width: 1rem;
     opacity: 0;
     animation: twinkle 1.5s infinite;
     -webkit-animation: twinkle 1.5s infinite;
+    z-index: 1;
 }
-.thumb-block .pic-block .pic-wrapper .s1 {
+.thumb-block .pic-block .slide-wrapper .s1 {
     left: .7rem;
 }
-.thumb-block .pic-block .pic-wrapper .s2 {
+.thumb-block .pic-block .slide-wrapper .s2 {
     left: .3rem;
     top: 40px;
     animation-delay: .5s;
     -webkit-animation-delay: .5s;
 }
-.thumb-block .pic-block .pic-wrapper .s3 {
+.thumb-block .pic-block .slide-wrapper .s3 {
     left: 1.7rem;
     animation-delay: 1s;
     -webkit-animation-delay: 1s;
 }
-.thumb-block .pic-block .pic-wrapper .s4 {
+.thumb-block .pic-block .slide-wrapper .s4 {
     left: 1.3rem;
     top: 60px;
     animation-delay: 1.4s;
@@ -501,7 +504,7 @@ video {
 }
 @keyframes twinkle {
   from {
-      opacity:.5;
+      opacity:.9;
   }
   to {
       opacity:0.3;
@@ -509,7 +512,7 @@ video {
 }
 @-webkit-keyframes twinkle {
   from {
-      opacity:.5;
+      opacity:.9;
   }
   to {
       opacity:0.3;

@@ -10,10 +10,13 @@
         var w = parseInt($('.inner-container').width());
         myPlayer.width(w);
 
+        $('.vjs-big-play-button').click();
+
         $('.video-bg').on('touchstart', function() {
             myPlayer.play();
             play_status = '1';
         });
+        
         $('video').on('touchstart', function() {
             myPlayer.pause();
             play_status = '2';
@@ -126,72 +129,97 @@
     var h_video = parseInt($('video').height());
 
     var re_slide_down = false;
+    var beforeScrollTop = 0;
+    $(document).scroll(function() {
+        var afterScrollTop = $(document).scrollTop(),
+            delta = afterScrollTop - beforeScrollTop;
+        if( delta === 0 ) return false;
+        if( delta > 0 ) {
 
-    $('.inner-container').on('touchstart', function(e) {
-        clientY_start = e.touches[0].clientY;
-        clientX_start = e.touches[0].clientX;
-        pageY_start = e.touches[0].pageY;
-        // console.log('s: ' + pageY_start);
-    });
-    $('.inner-container').on('touchmove', function(e) {
-
-        clientY_end = e.changedTouches[0].clientY;
-        clientX_end = e.changedTouches[0].clientX;
-        //判断移动的方向
-        distance = Math.abs(e.changedTouches[0].pageY - clientY_end);
-        // console.log('dis:' + distance);
-
-        if(clientY_start + minRange < clientY_end) {
-           isSlideDown = 'u';
-
-           if(!isRotate && (distance < (h_video + 100))) {
-               if (play_status == '1') {
-                   myPlayer.play();
-               }
-           }
-        } else if(clientY_start - minRange > clientY_end){
-           isSlideDown = 'd';
-
-
-            if (play_status == '1') {
-                myPlayer.pause();
+            if (afterScrollTop > h_video) {
+                if (play_status == '1') {
+                    myPlayer.pause();
+                }
             }
-
-            if (!isRotate && (distance >= h_video && distance < (h_video + 100))) {
+            if (!isRotate && (afterScrollTop >= (h_video - 20) && afterScrollTop < (h_video + 20))) {
                 animateHandler();
             }
-
+        } else {
+            if(afterScrollTop <= h_video) {
+                if (play_status == '1') {
+                    myPlayer.play();
+                }
+            }
         }
-
-
+        beforeScrollTop = afterScrollTop;
     });
 
 
+    // $('.inner-container').on('touchstart', function(e) {
+    //     clientY_start = e.touches[0].clientY;
+    //     clientX_start = e.touches[0].clientX;
+    //     pageY_start = e.touches[0].pageY;
+    //     // console.log('s: ' + pageY_start);
+    // });
+    // $('.inner-container').on('touchmove', function(e) {
+    //
+    //     clientY_end = e.changedTouches[0].clientY;
+    //     clientX_end = e.changedTouches[0].clientX;
+    //     //判断移动的方向
+    //     distance = Math.abs(e.changedTouches[0].pageY - clientY_end);
+    //     // console.log('dis:' + distance);
+    //
+    //     if(clientY_start + minRange < clientY_end) {
+    //        isSlideDown = 'u';
+    //
+    //        if(!isRotate && (distance < (h_video + 100))) {
+    //            if (play_status == '1') {
+    //                myPlayer.play();
+    //            }
+    //        }
+    //     } else if(clientY_start - minRange > clientY_end){
+    //        isSlideDown = 'd';
+    //
+    //
+    //         if (play_status == '1') {
+    //             myPlayer.pause();
+    //         }
+    //
+    //         if (!isRotate && (distance >= h_video && distance < (h_video + 100))) {
+    //             animateHandler();
+    //         }
+    //
+    //     }
+    //
+    //
+    // });
 
-    $('.thumb-block').on('touchstart',function(e){
 
-        var touch_ = e.originalEvent;
-		clientX_start = touch_.changedTouches[0].pageX;
 
-    });
-    $('.thumb-block').on('touchmove',function(e) {
-        clientX_end = e.changedTouches[0].clientX;
-        if (clientX_start + 10 < clientX_end) {
-            isSlideLeft = 'r';
-        } else if (clientX_start - 10 > clientX_end) {
-            isSlideLeft = 'l';
-        }
-
-    });
-    $('.thumb-block').on('touchend',function(e) {
-        if (isSlideLeft == 'l') {
-            // alert('2');
-            slideRight($(this).find('a.right'));
-        } else if(isSlideLeft == 'r') {
-            // alert('2');
-            slideLeft($(this).find('a.left'));
-        }
-    });
+    // $('.thumb-block').on('touchstart',function(e){
+    //
+    //     var touch_ = e.originalEvent;
+	// 	clientX_start = touch_.changedTouches[0].pageX;
+    //
+    // });
+    // $('.thumb-block').on('touchmove',function(e) {
+    //     clientX_end = e.changedTouches[0].clientX;
+    //     if (clientX_start + 10 < clientX_end) {
+    //         isSlideLeft = 'r';
+    //     } else if (clientX_start - 10 > clientX_end) {
+    //         isSlideLeft = 'l';
+    //     }
+    //
+    // });
+    // $('.thumb-block').on('touchend',function(e) {
+    //     if (isSlideLeft == 'l') {
+    //         // alert('2');
+    //         slideRight($(this).find('a.right'));
+    //     } else if(isSlideLeft == 'r') {
+    //         // alert('2');
+    //         slideLeft($(this).find('a.left'));
+    //     }
+    // });
 
     //滑动手势监听
 	$('.select-wrapper').on('touchstart',function(e) {
@@ -243,14 +271,14 @@
         var $left = $(elem).prev();
 
         if (!isAnim && index < length) {
-            $slide.find('.shining').hide();
+            $slide.parent().find('.shining').hide();
             isAnim = true;
             isSlideLeft = 'a';
             $slide.transition({ x:'-='+width}, 'linear', function() {
                 $active.removeClass('active');
                 $($img[index+1]).addClass('active');
                 $left.show();
-                $slide.find('.shining').show();
+                $slide.parent().find('.shining').show();
                 isAnim = false;
             });
             if (index == length -1) {
@@ -272,7 +300,7 @@
         if (!isAnim && index > 0) {
             isAnim = true;
             isSlideLeft = 'a';
-            $slide.find('.shining').hide();
+            $slide.parent().find('.shining').hide();
             $slide.transition({ x:'+='+width}, 'linear', function() {
                 $active.removeClass('active');
                 $($img[index-1]).addClass('active');
@@ -280,7 +308,7 @@
                 // if (index - 1 > 0) {
                 //     $(elem).show();
                 // }
-                $slide.find('.shining').show();
+                $slide.parent().find('.shining').show();
                 isAnim = false;
             });
             if (index == 1) {

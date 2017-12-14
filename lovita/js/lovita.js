@@ -8,8 +8,9 @@
 
     $('.vjs-big-play-button').on('click', function() {
         myPlayer.play();
+        $('video')[0].play();
         play_status = '1';
-        console.log('yep');
+        alert('yep');
     });
     myPlayer.ready(function(){
         var w = parseInt($('.inner-container').width());

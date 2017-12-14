@@ -6,16 +6,20 @@
     var play_status = '0';
     var howLoudIsIt;
 
+    $('.vjs-big-play-button').on('click', function() {
+        myPlayer.play();
+        play_status = '1';
+        console.log('yep');
+    });
     myPlayer.ready(function(){
         var w = parseInt($('.inner-container').width());
         myPlayer.width(w);
 
-        $('.video-bg').touchstart();
+        $('.vjs-big-play-button').click();
 
         $('.video-bg').on('touchstart', function() {
             myPlayer.play();
             play_status = '1';
-            alert('yep');
         });
 
         $('video').on('touchstart', function() {

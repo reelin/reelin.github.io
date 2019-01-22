@@ -1,6 +1,6 @@
 (function($) {
     var img = new Image();
-    img.src = 'imgs/qr.png';
+    img.src = 'imgs/bg.png';
     img.onload = function() {
         // 生成图片
         convert2canvas();
@@ -24,6 +24,10 @@
         canvas.width = width * scale; //定义canvas 宽度 * 缩放
         canvas.height = height * scale; //定义canvas高度 *缩放
         canvas.getContext("2d").scale(scale, scale); //获取context,设置scale
+
+        var left = (parseInt($(window).width()) - width)/2;
+
+        canvas.getContext("2d").translate(-left, -95);
         var opts = {
             scale: scale, // 添加的scale 参数
             canvas: canvas, //自定义 canvas

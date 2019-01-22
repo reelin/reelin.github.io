@@ -25,9 +25,10 @@
         canvas.height = height * scale; //定义canvas高度 *缩放
         canvas.getContext("2d").scale(scale, scale); //获取context,设置scale
 
-        var left = (parseInt($(window).width()) - width)/2;
+        var left = shareContent.offsetLeft;
+        var top = shareContent.offsetTop;
 
-        canvas.getContext("2d").translate(-left, -95);
+        canvas.getContext("2d").translate(-left, -top);
         var opts = {
             scale: scale, // 添加的scale 参数
             canvas: canvas, //自定义 canvas
